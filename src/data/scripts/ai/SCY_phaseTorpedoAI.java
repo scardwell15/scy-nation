@@ -38,7 +38,8 @@ public class SCY_phaseTorpedoAI implements MissileAIPlugin, GuidedMissileAI {
   private final MagicTargeting.targetSeeking seeking = MagicTargeting.targetSeeking.NO_RANDOM;
 
   // range under which the missile start to get progressively more precise in game units.
-  private float PRECISION_RANGE = 500;
+  private static float PRECISION_RANGE = 500;
+  private static final float DETONATION_RANGE = 800;
 
   // Leading loss without ECCM hullmod. The higher, the less accurate the leading calculation will
   // be.
@@ -162,7 +163,6 @@ public class SCY_phaseTorpedoAI implements MissileAIPlugin, GuidedMissileAI {
       }
 
       // mine trigger
-      float DETONATION_RANGE = 800;
       if (MathUtils.isWithinRange(target, MISSILE, DETONATION_RANGE * ECCM / 3)) {
         engine.spawnProjectile(
             MISSILE.getSource(),
