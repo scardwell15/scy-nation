@@ -1,0 +1,240 @@
+{
+	# should be a copy of "combatSmall", minus variants that are annoying to fight in low numbers
+	# for example, no Hyperions or fast beam-based kiting loadouts, or ships with damper field
+	"combatSmallForSmallFleet":{
+                    "SCY_tisiphone_assault": 2,
+                    "SCY_tisiphone_beamer": 2,
+                    "SCY_tisiphone_brawler": 2,
+                    "SCY_tisiphone_combat": 2,
+                    "SCY_tisiphone_saturation": 2,
+
+                    "SCY_lealaps_bomber": 3,
+                    "SCY_lealaps_combat": 3,
+                    "SCY_lealaps_support": 4,
+
+                    "SCY_megaera_combat": 2,
+                    "SCY_megaera_saturation": 2,
+                    "SCY_megaera_support": 2,
+                    "SCY_megaera_blaster": 2,
+                    "SCY_megaera_escort": 2,
+
+                    "SCY_alecto_advanced": 2,
+                    "SCY_alecto_beamer": 2,
+                    "SCY_alecto_combat": 2,
+                    "SCY_alecto_escort": 2,
+                    "SCY_alecto_harasser": 2,
+
+                    "SCY_talos_beamer": 2,
+                    "SCY_talos_brawler": 3,
+                    "SCY_talos_combat": 3,
+                    "SCY_talos_saturation": 2,
+	},
+	"combatSmall":{
+                    "SCY_alecto_advanced": 2,
+                    "SCY_alecto_beamer": 2,
+                    "SCY_alecto_combat": 2,
+                    "SCY_alecto_escort": 2,
+                    "SCY_alecto_harasser": 2,
+
+                    "SCY_tisiphone_assault": 2,
+                    "SCY_tisiphone_beamer": 2,
+                    "SCY_tisiphone_brawler": 2,
+                    "SCY_tisiphone_combat": 2,
+                    "SCY_tisiphone_saturation": 2,
+
+                    "SCY_lealaps_bomber": 3,
+                    "SCY_lealaps_combat": 4,
+                    "SCY_lealaps_support": 3,
+
+                    "SCY_talos_beamer": 2,
+                    "SCY_talos_brawler": 3,
+                    "SCY_talos_combat": 3,
+                    "SCY_talos_saturation": 2,
+
+                    "SCY_megaera_combat": 2,
+                    "SCY_megaera_saturation": 2,
+                    "SCY_megaera_support": 2,
+                    "SCY_megaera_blaster": 2,
+                    "SCY_megaera_escort": 2,
+
+                    "SCY_stymphalianbird_combat": 4,
+                    "SCY_stymphalianbird_gunner": 3,
+                    "SCY_stymphalianbird_hacker": 3,
+	},
+	"combatMedium":{
+                    "SCY_lamia_beamer": 2,
+                    "SCY_lamia_brawler": 2,
+                    "SCY_lamia_combat": 2,
+                    "SCY_lamia_saturation": 2,
+                    "SCY_lamia_support": 2,
+
+                    "SCY_lamiaA_AA": 2,
+                    "SCY_lamiaA_beamer": 2,
+                    "SCY_lamiaA_brawler": 2,
+                    "SCY_lamiaA_combat": 2,
+                    "SCY_lamiaA_escort": 2,
+
+                    "SCY_geryon_bomber": 3,
+                    "SCY_geryon_combat": 4,
+                    "SCY_geryon_support": 3,
+
+                    #"SCY_geryonH_brawler": 2,
+                    #"SCY_geryonH_combat": 3,
+                    #"SCY_geryonH_escort": 3,
+                    #"SCY_geryonH_support": 2,
+
+                    "SCY_pyraemon_artillery":1,
+                    "SCY_pyraemon_beamer":2,
+                    "SCY_pyraemon_blaster":2,
+                    "SCY_pyraemon_closeSupport":2,
+                    "SCY_pyraemon_combat":2,
+                    "SCY_pyraemon_minigun":1,
+
+                    "SCY_hydra_advanced": 2,
+                    "SCY_hydra_beamer": 3,
+                    "SCY_hydra_combat": 3,
+                    "SCY_hydra_saturation": 2,
+	},
+	"combatLarge":{
+                    "SCY_dracanae_beamer": 2,
+                    "SCY_dracanae_blaster": 2,
+                    "SCY_dracanae_brawler": 2,
+                    "SCY_dracanae_combat": 2,
+                    "SCY_dracanae_saturation": 2,
+
+                    "SCY_corocotta_artillery": 1,
+                    "SCY_corocotta_beamer": 2,
+                    "SCY_corocotta_combat": 2,
+                    "SCY_corocotta_energy": 2,
+                    "SCY_corocotta_escort": 2,
+                    "SCY_corocotta_pestControl": 1,
+
+                    "SCY_corocottaA_assault": 2,
+                    "SCY_corocottaA_beamer": 2,
+                    "SCY_corocottaA_combat": 2,
+                    "SCY_corocottaA_energy": 2,
+                    "SCY_corocottaA_escort": 2,
+
+                    "SCY_erymanthianboar_AA": 2,
+                    "SCY_erymanthianboar_advanced": 2,
+                    "SCY_erymanthianboar_bomber": 3,
+                    "SCY_erymanthianboar_combat": 3,
+
+                    "SCY_siren_beamer": 2,
+                    "SCY_siren_brawler": 2,
+                    "SCY_siren_combat": 2,
+                    "SCY_siren_killer": 2,
+                    "SCY_siren_support": 2,
+
+                    "SCY_khalkotauroi_beamer": 2,
+                    "SCY_khalkotauroi_brawler": 2,
+                    "SCY_khalkotauroi_combat": 2,
+                    "SCY_khalkotauroi_escort": 2,
+                    "SCY_khalkotauroi_saturation": 2,
+	},
+	"combatCapital":{
+                    "SCY_nemeanlion_AA": 1,
+                    "SCY_nemeanlion_artillery": 2,
+                    "SCY_nemeanlion_beamer": 1,
+                    "SCY_nemeanlion_brawler": 2,
+                    "SCY_nemeanlion_combat": 2,
+                    "SCY_nemeanlion_missile": 1,
+                    "SCY_nemeanlion_rocketeer": 1,
+	},
+	
+	
+	# hybrid ships with good combat and cargo capacity
+	"combatFreighterSmall":{
+                    "SCY_centaur_combat": 5,
+                    "SCY_centaur_escort": 5,	
+	},
+	"combatFreighterMedium":{
+                    "SCY_telchine_standard":10,
+	},
+	#"combatFreighterLarge":{
+	#},
+	
+	"civilianRandom":{
+                    "SCY_telchine_standard":10,
+	},
+
+	# carriers
+	"carrierSmall":{
+                    "SCY_argus_assault": 2,
+                    "SCY_argus_combat": 2,
+                    "SCY_argus_escort": 2,
+                    "SCY_argus_longrange": 2,
+                    "SCY_argus_support": 2,
+	},
+	"carrierMedium":{
+                    "SCY_manticore_artillery": 2,
+                    "SCY_manticore_beamer": 2,
+                    "SCY_manticore_combat": 2,
+                    "SCY_manticore_escort": 2,
+                    "SCY_manticore_support": 2,
+	},
+	"carrierLarge":{
+                    "SCY_keto_AA": 2,
+                    "SCY_keto_combat": 3,
+                    "SCY_keto_energy": 2,
+                    "SCY_keto_support": 3,
+	},
+
+	# phase ships
+	#"phaseSmall":{
+	#},
+	#"phaseMedium":{
+	#},
+	#"phaseLarge":{
+	#},
+	#"phaseCapital":{
+	#},
+
+	# freighters and such
+	"freighterSmall":{
+                    "SCY_centaur_combat": 5,
+                    "SCY_centaur_escort": 5,
+	},
+	"freighterMedium":{
+                    "SCY_baliusF_auxiliary": 5,
+                    "SCY_baliusF_support": 5,
+	},
+	"freighterLarge":{
+                    "SCY_xanthus_standard":5,
+                    "SCY_xanthus_auxiliary":5,
+	},
+	
+	"tankerSmall":{
+                    "SCY_centaur_combat": 5,
+                    "SCY_centaur_escort": 5,
+	},
+	"tankerMedium":{
+                    "SCY_baliusT_auxiliary": 5,
+                    "SCY_baliusT_support": 5,
+	},
+	#"tankerLarge":{
+	#},
+	
+	#"personnelSmall":{
+	#},
+	#"personnelMedium":{
+	#},
+	#"personnelLarge":{
+	#},
+	
+	#"linerSmall":{
+	#},
+	#"linerMedium":{
+	#},
+	#"linerLarge":{
+	#},
+	
+	# utility ships
+	#"tug":{
+	#},
+	#"crig":{
+	#},
+	"utility":{
+                    "SCY_telchine_standard": 10,
+	},
+}

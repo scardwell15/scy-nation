@@ -1,0 +1,60 @@
+{
+  "bounds": [
+    -80,
+    11,
+    -74,
+    17,
+    3,
+    32,
+    10,
+    25,
+    68,
+    6,
+    81,
+    -32,
+    -15,
+    0
+  ],
+  "builtInMods": [
+    "reduced_explosion",
+    "always_detaches",
+    "no_weapon_flux",
+    "SCY_armorChild"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SCY_anti1"
+  },
+  "center": [
+    33.5,
+    82.5
+  ],
+  "collisionRadius": 90,
+  "engineSlots": [],
+  "height": 165,
+  "hullId": "SCY_lionRR",
+  "hullName": "Armor",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 90,
+  "spriteName": "graphics/SCY/ships/SCY_nemeanLion_armorRearRight_01.png",
+  "style": "SCYHULL",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -120,
+      "arc": 225,
+      "id": "WS0001",
+      "locations": [
+        16.5,
+        10.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    }
+  ],
+  "width": 67
+}

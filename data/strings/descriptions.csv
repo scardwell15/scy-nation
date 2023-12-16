@@ -1,0 +1,961 @@
+id,type,text1,text2,text3,notes
+,,,,,
+,,,,,
+# WEAPONS WEAPONS WEAPONS
+,,,,,
+,,,,,
+,,,,,
+SCY_Fhammer,WEAPON," Industrial tool designed to fracture and manipulate asteroids debris to extract their ressources.",role,,
+SCY_Frotary,WEAPON," A rotary variant of the vulcan that can handle sustained bursts without the bulky cooling system of the ship-borne variant of the weapons.",General,,
+SCY_Fcluster,WEAPON," Launches a MIRV torpedo housing ten small unguided submunitions, designed to disperse into a deadly cloud that is difficult to evade or intercept.",Strike,,
+SCY_Fbeam,WEAPON," A small scale beam emmiter with limited armor penetration but well suited to deal with other fighters or light frigates.",Anti-Fighter,,
+SCY_Fswarmer,WEAPON," Tiny and agile anti-fighter missiles with limited payload.",Anti_Fighter,,
+SCY_Fgrenade,WEAPON," A space-rated scaled-up grenade launcher able to saturate a target's defenses with small and difficult to intercept bomblets.",Strike,,
+SCY_Fseb,WEAPON," A Light Blaster slightly under-powered for ship use that has been stripped down to fit a strikecraft frame. High damage-per-shot and projectile speed, but low fire rate.",General,,
+SCY_Frocket,WEAPON," Kinetic-tiped lightweight anti-shield rockets designed to quickly give a headstart to Scyan strikecraft when dealing with heavily shielded targets.",,,
+,,,,,
+,,,,,
+,,,,,
+#SCPB
+,,,,,
+,,,,,
+,,,,,
+SCY_scpb,WEAPON," The Super-Charged Pulse Beam maximizes burst damage potential over sustained output. Built specifically for the Nemean Lion's frontal array, it is intended to disable a target in a single blow leaving the weapon a respite to safely recharges its accumulators. The ludicrous amount of energy required to fire this weapon restricts its usage to only a few models of ships, but very few other weapon systems boast such destructive power combined with perfect accuracy and long range.
+
+ Initially the intention was to create a pulsed version of the well known, if not exactly common, High Intensity Laser. But little did the engineers understand of the robustness of the HIL before actually starting to experiment with increasingly stronger yields and shorter pulses. The final iteration of this weapon barely resembles the HIL in its operation, but still uses the exact same generator as its core, a testament of the Domain's engineering expertise. As such, it is one of the more flux efficient weapon in the Scyan arsenal.
+
+ The shift in the frequency of the emitter did have the unpleasant consequence of markedly increasing the X and Gamma rays emissions produced when fired. This side effect has been mitigated somewhat by installing anti-radiation fields, but between the geometry constraints of the field generation and the requirement to leave an opening to fire the beam through, the radiation dissipation could only be canalized into a forward-facing flat cone. To limit crew exposure, that cone is oriented along the surface plane of the ship's hull and two additional plates of anti-radiation shielding encase the weapon's muzzle taking care of any residual leakage. 
+
+ The exterior design is purposely far removed from its inspiration to avoid drawing the attention of Tri-Tachyon military researchers and manufacturers: As the Scyan Engineering College desires to prevent others from retrofitting HILs into full fledged assault weapons!",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#UHEB
+,,,,,
+,,,,,
+,,,,,
+SCY_uheb,WEAPON," A large energy weapon born from the re-engineering of the standard Heavy Blaster. Featuring an improved fire rate, EMP charged bolts, increased velocity, plus a slightly longer range and better flux efficiency. It is however larger, the chassis turns much slower, and is less precise. Greatly appreciated by Scyan officers for its ""general purpose"" profile.
+
+ Internally, few modifications were made to the original Heavy Blaster beyond re-arranging the components in a more narrow and longer shape. The main addition was the special aperture, with custom focalizing fields specifically tuned to the elongated chamber. This configuration allows for a significantly higher velocity projectile that still maintains its cohesion over longer distances.
+
+ While this weapon was originally intended as an easy-to-use alternative to the Plasma Cannon with better shield pressuring capabilities, it has been quite successfully utilized in engagements where high burst damage was not required. The U.H.E.B. is generally considered an effective all around weapon: decent in any situation against both smaller and larger targets, and is not required to work in tandem with another model of weapon.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#TEB
+,,,,,
+,,,,,
+,,,,,
+SCY_teb,WEAPON," This Triple Energy Blaster is born from the resurrection of the discontinued Energy Blaster, that had long since been replaced by its Heavy variant as the Domain's standard. While lacking in terms of raw damage output the progress in material engineering since its retirement allowed for extensive miniaturization, enough to fit three of them into a single medium weapon chassis.
+
+ In the early days of the Scyan Navy, the old Energy Blaster was but the only general purpose assault weapon available to them. They had not yet managed to acquire a Heavy Blaster UAC, the HEMor mark two is ineffective against powerful shields, and their Kinetic weapons were still in their infancy. The Yggdrasill had received some blueprints for an Energy Blaster from one of the independent worlds they assisted before being forced into exile, but the weapon was clearly outmatched by any modern equipment and defeated by all but the lightest armor. Although being so outdated also meant there was a lot of room for improvements using modern materials and engineering.
+
+ The initial excitement of potentially multiplying the output of their Energy Blasters was quite tempered by the spectacular failure of the test-bench prototype. As it turned out, even when using modernized alloys the supposedly ""oversized"" cooling systems and parallel energy buses could not be miniaturized without dire consequences, both to the weapon and any nearby personnel. What could have been a direct upgrade over the Heavy Blaster required governors to limit the energy discharged during each shot in order to preserve the components and allow a delay for heat dissipation. Still, this weapon firmly stands as a viable alternative to the Heavy Blaster in short range high damage energy weaponry.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#SEB
+,,,,,
+,,,,,
+,,,,,
+SCY_seb,WEAPON," Initially the long since retired medium-sized predecessor of the Heavy Blaster. Thanks to the Scyan expertise in modern lightweight materials, it has been miniaturized enough to fit in a small mount. While having similar characteristics as its larger counterpart, including high damage-per-shot and projectile speed, this weapon is held back by a rather low fire rate.
+
+ A by-product from the development of the Triple Energy Blaster: as the Scyan engineers managed to fit three miniaturized Energy Blasters into a weapon chassis fitting of a medium emplacement, they almost accidentally realized that a single one could easily be used on frigates and other smaller ships. While the fire rate had to be kept low for cooling purposes, the resulting device punches far beyond the usual weapons of this size, bar the rare Antimatter Blaster.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#SCATTER BEAM
+,,,,,
+,,,,,
+,,,,,
+SCY_scatter,WEAPON," Linking nine Tactical Laser grade emitters into a fast-discharge accumulator instead of a steady power source produced this potent assault weapon comparable to the Phase Lance.
+
+ After the success of the Super-Charged Pulse Beam design, the admiralty requested a medium sized weapon able to produce a similar high rate of fire, combined with high damage bursts but long delays between them. At that time the engineers lacked a working example of a Phase Lance to work from, but still understood the theory behind its functioning. They naturally turned to the ubiquitous Tactical Laser and attempted to enhance it using the same techniques that turned a tame High Intensity Laser into the furious S.C.P.B. assault weapon. Unfortunately the results were underwhelming at best. The first prototypes were reasonably more powerful than the original emitter, but flux issues rose sharply as well as a dramatically reduced component lifespan. The focusing apparatus also had difficulty coping with the increased output which had a side effect of significantly reducing the effective range. In an attempt to reduce the load on the most sensitive components several emitters have been mounted in parallel. However this arrangement would have required a much larger turret body to house all their fast discharge accumulators. Certainly too large for a medium mount.
+
+ A clever solution found was to link all nine emitters to a single big accumulator with higher efficiency. The drawback was that the full charge had to be expended in a single burst instead of several consecutive ones. In addition, the apertures are assembled so close to each other that heat deformations tend to slightly disperse the beams, reducing efficacy against armor. Still, the damage output in a short pulse is staggering compared to what nine TacLasers could do in the same amount of time. This configuration has surprised many captains during the heat of battle as the energy signature of the weapon still registers as several ""Tactical Lasers"" on most threat databases, and the energy efficiency remains similar which is greatly appreciated by Scyan captains. However despite the engineers best efforts, this weapon is still unusually large: it requires special reinforcement collars to be mounted on a medium slot reducing its nominal turn rate significantly.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#LVDS
+,,,,,
+,,,,,
+,,,,,
+SCY_lvds,WEAPON," An intermediate point-defense solution for fleet-wide protection. The L.V.D.S., soon dubbed ""Livids"", provides adequate long-range missile interceptions results, decent anti-fighter damage output, superb tracking and energy efficiency, all in a simple to install package.
+
+ While the Scyan Navy already had several small PD solutions available, the need to deal with shielded fighters created the demand for a medium sized weapon. Tasked to experiment with an oversized Long Range PD Laser, the Scyan engineers discovered that the standard emitter had a governor installed to prevent any excessive component wear and overheating. Merely with the addition of massive upgraded cooling system, they were able to greatly raise the energy conversion efficiency of the weapon, nearly tripling the output for a similar power requirement.
+
+ The reinforced turret also houses a class three grade gyro, allowing the weapon to rotate almost as fast as its smaller counterpart despite the additional mass. In addition to a simple power conduit design, the weapon is extremely well balanced imparting minimal stresses to a standard modular weapon mount. These characteristics defined the new ""Plug and Play"" certification standard for the ease of installation for future Scyan weapon designs.",Point Defense,,
+,,,,,
+,,,,,
+,,,,,
+#HACKING COMMLINK
+,,,,,
+,,,,,
+,,,,,
+SCY_hack,WEAPON," Equipped with line of sight communication arrays and fast computers, this weapon quickly interfaces with the target's internal network to power down their systems and cause disruptive localized electrical overloads. Shields mitigate the data transfer rate but are unable completely neutralize it.
+
+ The very first weapon created for the Scyan Navy, dating back to the first Great Expedition by Alexander Gran. The initial design was a simple cluster of comm lasers and antennas mounted on a swivel, but since then it has been upgraded by armoring the weapon chassis and equipping it with redundant systems to function even in the thick of battle. Although how it operates has remained the same: seeking all short range communication networks a ship broadcasts between itself and its allies/drones/missiles and attempting to brute force a connection. Then the weapon operators attack the most vulnerable systems and try to disable the vessel's weapons and engines, or overload devices causing small internal explosions. If the target is a missile, they will attempt to cause the warhead to detonate or to shut off its thrusters.
+
+ Despite originally being an improvised non combat-grade weapon, it can still prove extremely powerful, as its efficiency raises sharply when massed. A few of them can silence a blazing cruiser in a matter of seconds, but if the link is closed somehow, the enemy crew will rapidly regain control of their ship. The exception to that rule is their somewhat limited efficiency against missiles: since there are only so many systems that can be hacked at once, the effect does not stack against smaller targets. Still, a deadly Atropos can be disabled in about the same time as a flimsy Swarmer.",Point Defense,,
+,,,,,
+,,,,,
+,,,,,
+#OSCILLATING BEAM
+,,,,,
+,,,,,
+,,,,,
+SCY_oscillating,WEAPON," As the name suggests, this beam weapon fires a standard Tactical Laser that has been overcharged far beyond its normal operating parameters. The increased operating temperatures causes the focussing lens to distort during operation.
+
+ Initially intended to be a mid sized long-range / medium-yield beam, it has been stripped from its heavy cooling system to fit in a small modular mount. With some concessions on the maximum range and power output, the beam can be fired reliably. Still the heat generated is enough to deform the chassis and the lenses, causing the distinctive vibration of the beam output during prolonged bursts. A compensating system has been installed that reorients the beam and keeps it on target through most of the smaller deviations, but it cannot completely negate the most severe ones. It is however more efficient when combined with upgraded turret gyros.
+
+ Since it is unable to focus continually on a small point, the weapon is not extremely potent at burning through heavy armor, or destroying small hardened targets like heavy fighters. But for its size and flux requirements, the output is unusually high, making it an interesting option as a secondary weapon.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+#ORION ARTILLERY
+,,,,,
+,,,,,
+,,,,,
+#SCY_orion,WEAPON," The Orion Artillery fires a slow and heavy slug with a multi-stage low-yield fusion charge on its back and a dense shield piercing tip. Every few moments the lowest stage is detonated giving the ordnance a strong burst of acceleration, trading Explosive damage for more Kinetic energy.
+#
+# The Orion nuclear propulsion system is a millennium old design that has never been effectively used in the past due to the extreme collateral damage caused both in atmosphere and to nearby starships. However when miniaturized into an ordnance propulsion system and using a modernized ""clean"" fusion reaction as propellant, it is an efficient solution to accelerate a projectile after it travelled a safe distance from the firing vessel. The longer the flight, the more velocity is attained, ultimately converting all of the projectile's explosive damage potential into shield busting kinetic energy.
+#
+# Despite its short barrel the weapon is unusually bulky, for two reasons. There was the need to accommodate a small X-ray beam emitter to control the detonations, although it only increased the volume by 13 percent. A more problematic issue was that the detonation process prevents armoring the laser detonated nuclear fusion charges. The concept of transporting hundreds of those very sensitive rounds in a hull that was expected to face hostile weapons fire did not sit well with the admiralty. Going against millennia of tried and true schools of thought of weapon designs, the engineers decided against using the ship's armored magazines but rather to store a limited amount of ammunition inside the weapon's turret itself. While that increased the risk of volatile ammo cook off, it was deemed preferable to loose a turret rather than an entire ship. As a slight compensation, the shortened transit from the magazine to the breech itself reduced its flux requirements and allowed for a slightly higher fire rate than was originally anticipated.",Fire Support,,
+#SCY_orion,WEAPON," The Orion Artillery fires a slow and heavy slug with a multi-stage low-yield fusion charge on its back and a dense shield piercing tip. Every few moments the lowest stage is detonated giving the ordnance a burst of acceleration, trading kinetic mass for more velocity and limited target tracking.
+#
+# The Orion nuclear propulsion system is a millennium old design that has never been effectively used in the past due to the extreme collateral damage caused both in atmosphere and to nearby starships. However when miniaturized into an ordnance propulsion system and using a modernized ""clean"" fusion reaction as propellant, it is an efficient solution to accelerate a projectile after it travelled a safe distance from the firing vessel. The longer the flight the higher velocity is attained, as well as small scale course corrections. The increased projectile speed however does compensate for the loss of mass, and at max range only half the damage potential remains.
+#
+# Despite its short barrel the weapon is unusually bulky, for two reasons. There was the need to accommodate a small X-ray beam emitter to control the detonations, although it only increased the volume by 13 percent. A more problematic issue was that the detonation process prevents armoring the laser detonated nuclear fusion charges. The concept of transporting hundreds of those very sensitive rounds in a hull that was expected to face hostile weapons fire did not sit well with the admiralty. Going against millennia of tried and true schools of thought of weapon designs, the engineers decided against using the ship's armored magazines but rather to store a limited amount of ammunition inside the weapon's turret itself. While that increased the risk of volatile ammo cook off, it was deemed preferable to loose a turret rather than an entire ship. As a slight compensation, the shortened transit from the magazine to the breech itself reduced its flux requirements and allowed for a slightly higher fire rate than was originally anticipated.",Fire Support,,
+SCY_orion,WEAPON," The Orion Artillery fires a heavy slug with a multi-stage low-yield fusion charge on its back and a dense shield piercing tip. Every few moments the lowest stage is detonated giving the ordnance a burst of acceleration, allowing for a limited target tracking ability.
+
+ The Orion nuclear propulsion system is a millennium old design that has never been effectively used in the past due to the extreme collateral damage caused both in atmosphere and to nearby starships. However when miniaturized into an ordnance propulsion system and using a modernized ""clean"" fusion reaction as propellant, it is an efficient solution to accelerate a projectile after it travelled a safe distance from the firing vessel. Despite its short barrel the weapon is unusually bulky, for two reasons. There was the need to accommodate a small X-ray beam emitter to control the detonations, although it only increased the volume by 13 percent. A more problematic issue was that the detonation process prevents armoring the laser detonated nuclear fusion charges. The concept of transporting hundreds of those very sensitive rounds in a hull that was expected to face hostile weapons fire did not sit well with the admiralty. Going against millennia of tried and true schools of thought of weapon designs, the engineers decided against using the ship's armored magazines but rather to store a limited amount of ammunition inside the weapon's turret itself. While that increased the risk of volatile ammo cook off, it was deemed preferable to loose a turret rather than an entire ship. As a slight compensation, the shortened transit from the magazine to the breech itself reduced its flux requirements and allowed for a slightly higher fire rate than was originally anticipated.",Fire Support,,
+,,,,,
+,,,,,
+,,,,,
+#ZONE SCORCHER
+,,,,,
+,,,,,
+,,,,,
+SCY_scorcher,WEAPON," The Zone Scorcher is a large artillery battery designed to deal with entire missile volleys with a single shot. Each projectile releases several small submunitions exploding in quick succession, saturating the target with a deadly wide spread hail of shrapnel. The large area of effect can damage an entire fighter wing, shred any ordnance they fired, and disrupt targeting systems.
+
+ Mechanically identical to the ubiquitous Flak Cannon, the Scorcher has a reduced rate of fire compared to its cousin due to its massive grapeshot flak ammunition. That loss has been in a large part compensated for by the triple barrel configuration, which is less taxing on the cooling systems and ammunition autoloader. The weapon also has a quick traverse thanks to the ultra-light frame, although maintenance personnel often complain about excessive wear on the turrets collars and constant battle damage.
+
+ With this weapon, the Scyan navy finally has an effective response to fighter threats. When used against warships, the secondary explosions can even sometimes hit behind their shield and the relentless pounding conveniently reduce the enemy's fire accuracy. The typical doctrine concerning its usage is to target ships directly instead of the individual missiles it can fire, this improves hit reliability and damages both the ship and any missile being launched from it directly at the source. The main drawback of this cannon is the size: mounting one in a large slot means sacrificing a significant degree of actual anti-ship capability. Captains are advised to use this weapon with caution as it has a somewhat infamous reputation for friendly fire.",Point Defense,,
+,,,,,
+,,,,,
+,,,,,
+#RICOCHET
+,,,,,
+,,,,,
+,,,,,
+SCY_ricochet,WEAPON," The infamous Ricochet Gun propels a unique projectile that is able to redirect itself towards the nearest enemy when it reaches its maximum range. Developed along similar lines of the successful Orion Artillery, this weapon trades raw firepower for increased hit probability instead of range. 
+
+ Since each round contains a miniature comm link and a gyroscope to reorient itself along the coordinates transmitted by the firing ship, the payload is somewhat limited. The design makes up for that with an increased rate of fire. A skilled artillery officer can even hit a ship from behind by deliberately missing it. The reduced damage of the secondary slug makes this tactic sounder against light targets, while a direct hit can punch holes in all but the thickest armor.
+
+ The design shares most of it components with the more conventional HEMor mk.3 with the communication systems bolted on top of the turret being standard fleet equipment. Only the barrel is instead smoothbore since a spin stabilization would prevent the ordnance reorientation. The slight loss in accuracy is irrelevant as precise redirection is the entire reason for the new type of shell. 
+
+ The development of this weapon was tainted by a dramatic accident: To allow the shell charge to reorient itself, it is equipped with a miniature high-saturation gyroscope. Additionally it is also spun up right before the weapon is discharged, as embarking additional capacitors to do that mid-flight would have further reduced the offensive payload. However, even using the Domain's best materials imparting such a massive acceleration on a device already spinning at fifty thousand RPM is dangerously close to the limits of what is physically possible. During a live-fire test in the vacuum of space a millimeter high defect came in contact with the fly-wheel at the peak of its deflection, shattering it instantly. The entire shell promptly disintegrated, gutting open the prototype's barrel just outside of the facility's armored shooting range. The anti-blast protection contained the explosion of the payload, but the high velocity tungsten debris of the gyroscope ricocheted their way towards unarmored sections of the station, killing hundreds of personnel while the pressure doors vainly sealed off the perforated compartments.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#HEMOR 
+,,,,,
+,,,,,
+,,,,,
+SCY_hemor1,WEAPON," This High Explosive Mortar is possibly one of the crudest weapon in current circulation: propelling a canister containing a high explosive at low velocity using a low-yield exothermic chemical reaction through a smoothbore barrel. This simplicity makes for a very reliable, if short ranged, low maintenance easy to mount weapon that still packs quite a punch.
+
+ Originally, this was a mining tool used to launch tether harpoons in hazardous environments where using using proper explosive propellants would be considered unsafe. The device was weaponized during the miner rebellion of Aleta VI, before the Great Collapse. How such a blueprint found its way into the Yggdrasill autofactory is still a mystery, but that did not prevent Scy from deploying it as a general purpose anti-ship weapon.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_hemor2,WEAPON," A variant of the High Explosive Mortar which is an enlarged version of the MK I. The MK II features a much larger caliber and a slightly longer range thanks to a rifled barrel, while retaining similar performance in other areas. 
+
+ Almost an exact copy of its smaller cousin only at a larger scale, while making improvements to the autoloader mechanism to cope with shells 150% more massive. Likely the quickest project ever completed by the Engineering College. The changes were of such a small scope that the first prototype was already assembled a mere week after the program was greenlit, and it succeeded its tests with flying colors. Only a few minor tweaks were made to fine-tune the loading system and the first production weapons were being equipped on ships within the same month. Only after some captains complained about the unreliable accuracy, a rifled version was produced.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_hemor3,WEAPON," The Mark III High Explosive Mortar is the largest model in this line of weapons. The MK III is the unimaginative combination of two synchronized HEMor MK II weapons, affixed to a more robust chassis to allow an even larger propellent charge for extended range.
+
+ The low velocity rounds often catch captains off guard: the high-yield explosive they contain makes it one of the most damaging per-shot ballistic weapons in the Sector. Almost on par with the tremendously powerful Hellbore Cannon, but firing two shots at once! While Scyan captains are proud of their elaborate tactics and original weaponry, there is always something about the brutal simplicity and overwhelming destructive power of the heavy HEMor that appeals to every single one of them.
+
+ Compared to the venerable Hellbore, the HEMor mk.3 feature a more compact design providing a faster turret traverse speed while having similar installation requirements. Due to the shorter barrels coupled with a larger propellant charge, the accuracy is somewhat limited at maximum range, but the faster projectile also leaves less time for ships to attempt to evade.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#KACC
+,,,,,
+,,,,,
+,,,,,
+SCY_kacc1,WEAPON," Belonging to the Railgun family of weapons, the Kinetic Accelerators trade range for denser, more potent ammunition. Making up for its low flux efficiency with an unusually high damage per shot and precision for a such a small device.
+
+ Railguns have been used for a millennium, whether as potent weapons, or instruments of science. The Kinetic Accelerator came from the second group: the tool it was developed from was used to cheaply launch high velocity impact probes, and to test out new materials indoors without polluting the closed atmosphere of the Yggdrasill. The limited range but larger ordnance profile are part of its civilian heritage, despite these drawbacks it has been put to good use in the militarized version.
+
+ While it can be tricky to get within effective range, a few well placed shots can quickly overload any shield. With its precise accuracy, it can also be used as a secondary weapon for dealing with fighters.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+SCY_kacc2,WEAPON," This is the mid-sized variant of the Kinetic Accelerator lineup of weapons. The MK II uses fast discharge accumulators directly exposed to vacuum to propel an even denser projectile. The longer rails also increase the muzzle velocity significantly.
+
+ A weapon that holds a special place in the heart of every Scyan captain. The near perfect accuracy and high muzzle velocity often allow precise shot placement just outside of a shield arc that other weapons would have grossly missed. While the large amount of imparted kinetic energy ensures significant damage to even military-grade armor.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+SCY_kacc3,WEAPON," Extremely efficient at bringing shields down, the Kinetic Accelerator Mark III is somewhat unwieldy: The rate of fire is so low that a missed shot at close range leaves a ship unable to fire again for a moment while suffering full retaliation.
+
+ This weapon is often the source of heated debates between tacticians: should a captain attempt to shield against the shots risking to overload the power grid, or take a hit to the armor? Typically in the case of kinetic weapons the latter is favored, but the KAcc MKIII projectile possesses such energy that even heavy armor takes significant damage. As long as the firing ship's capacitors can handle the flux produced, it is certainly one of the most effective weapons available to force down an enemy ship's shield.
+
+ Scyan kinetic weapons were in general lackluster until recently. It was only during the Great Expedition of 201 that a boarding team managed to snatch several UACs from a remote autofactory while its defensive fleet had been lured away. Such an isolated factory only produced spare parts for the local outposts and their token fleet, so no high quality weapon or ship blueprints could be acquired. However a few of those replacement systems were far more performant than Scy's standard equipment. Including military-grade capacitors with greater efficiency and a faster discharge rate. This finally allowed the Scyan Engineering College to upgrade their railgun designs far beyond the limitations of their civilian capacitors.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+#MINIGUN
+,,,,,
+,,,,,
+,,,,,
+SCY_minigun1,WEAPON," A ballistic weapon that is able to hit anything with pinpoint accuracy but only moderate damage. Designed to rend fighters and unarmored targets apart with a hail of micro needles accelerated to a significant fraction of C.
+
+ In contradiction with what was believed to be the ""correct"" way to improve railguns, an experiment was conducted to dramatically reduce the mass of a Kinetic Accelerator slug to the point where it could be propelled to relativistic speeds. The resulting weapon developed blurs the line between ballistic and beam weapons: pin point accuracy and almost infinite travel speed are not the usual characteristics of a projectile weapon. The barrel did suffer a lot from heating and deformation issues severely limiting its lifespan under sustained fire, thus the rotary design. It solved the cooling issue by both allowing each barrel to fire less often and helping to circulate the refrigerating coolant. However two major limitations are to be noted.
+
+ - While given an extreme amount of kinetic energy, the slug masses only a few nano-grams. The damage dealt is thus extremely low, especially when the impacted material instantly flashes into plasma, mitigating further the energy transfer. This is somewhat alleviated by the fact that these bursts of plasma tend to shear shards of armor off and scatter them in all directions, often dealing much more damage than the original projectile itself.
+ - Its accuracy is so great that it requires extremely careful aiming, sometimes beyond the tracking abilities of the weapon itself when it targets small objects like missiles. As a matter of fact, this line of ballistic weapons benefits more from optics improvements rather than regular ballistic enhancements.
+ 
+ One unforeseen benefit of using such small ordnance is that it can effectively be stored in limitless quantities.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+SCY_minigun2,WEAPON," Following in the footsteps of its smaller cousin, the Heavy Minigun is beam like in its usage profile. The larger ammunition it fires pressures shields and tears apart lightly armored targets.
+
+ It is extremely potent against unshielded strike craft as their light armor is unable to stop the nano needles effectively, but unlike the light version its heavier chassis is too slow to be used as a point-defense weapon against missiles.
+
+ While merely average in performance against combat ships, these weapons also have a psychological effect on the crew of both sides. The menacing look, the impressive rate of fire and the banshee-like shrieking of the impacting needles on the hull tends to influence the battles outcome in subtle manners that have yet to be documented.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+SCY_minigun3,WEAPON," A twin Heavy Minigun, doubling up on the strengths of its medium cousin. Only minute modifications have been made on the original weapon beside mirroring the assembly, but the end result is a terrific tool to deal with targets stripped from armor and an extreme menace to any strikecraft regardless of armor or shield defense. 
+
+ Somewhat born from simple curiosity rather than to respond to a specific need, the first prototype has been assembled 'to see if it could work'. As a result the Twin Heavy Minigun occupy an awkward place in the Scyan arsenal as a good support weapon that few ship can afford to mount. Still, and despite it's rarity, it has seen some active service with decent results when engaging heavy fighter forces that the Area Scorcher couldn't deal with, or small pirates patrols.
+ 
+ Despite being expensive to built, it is very easy to install and not taxing on a ship's structure due to the constant smooth recoil when fired.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+#BURST
+,,,,,
+,,,,,
+,,,,,
+SCY_burst,WEAPON," The Beehive-Nailer fires a dozen tungsten-alloy flechettes encased in a sabot, once the sabot has been discarded they spread out in a deadly cloud. It is especially potent against swarms of missiles as a single shot can damage several incoming threats.
+
+ The Burst-Nailer has been developed to counter the recent missile improvements seen throughout the Sector as the scattering effect often counters the variable trajectories missiles can approach from. This weapon is greatly appreciated by captains due to its ease of use, allowing even rookies to man point-defense weapons with a decent efficiency. The sturdy casing of the rounds also implement several safety features to prevent a destructive ammo cook off event should the magazine be penetrated by enemy fire, which is always something to consider with lightly armored ships. In close combat, this weapon can be used to used to destroy ships with compromised armor with staggering efficiency.",Point Defense,,
+,,,,,
+,,,,,
+,,,,,
+#FLAK
+,,,,,
+,,,,,
+,,,,,
+SCY_flak,WEAPON," The Small Flak was developed to work in tandem with more conventional point-defense weapons. A quick modification to a small caliber HEMor to fire a proximity-fused shell loaded with shrapnel: crude but efficient.
+
+ While extremely small, it excels at intercepting missiles on transversal trajectories that Auto-Nailers have trouble targeting reliably. Even though its area of effect and blast-yield are somewhat underwhelming it still is capable of softening up an entire missile volley with one shot. However it lacks the punch needed to deal with armored torpedoes or shielded fighters. It is advised to use it in tandem with standard PD to prevent missiles from taking advantage of its low cyclic rate of fire.",Point Defense,, 
+,,,,,
+,,,,,
+,,,,,
+#INTERCEPTION
+,,,,,
+,,,,,
+,,,,,
+SCY_intercept,WEAPON," A fast tracking precision gun modified for point defense duties as well as fighter deterrence. The four-shot revolving magazine allow for some quick one-two punches combos against fighters or instant following shot against slippery missiles. The down time between them however makes this weapon ill-suited to defend against swarms of small missiles and other carpet-bombing runs. The required calibrations also make it difficult to mount compared to other Point-defense solutions.",Point Defense,, 
+,,,,,
+,,,,,
+,,,,,
+#NAILER
+,,,,,
+,,,,,
+,,,,,
+SCY_nailer,WEAPON," A LMG-tier point-defense system, the Auto-Nailer is a barely modified copy of the widespread Vulcan Machine Gun point-defense weapons, utilizing extended length cartridges for increased range and muzzle velocity. However these heavier cartridges slightly slowed the autoloader system, now unable to feed the weapon for long when firing continuously at the maximum fire rate.
+
+ The Nailer projectiles are nearly useless against heavy armor and shields due to the low mass as they tend to fragment upon impact rather than penetrate. However they can be safely stored in large quantities in relatively small spaces. The barrels fire in a synchronized pattern as that is more effective at saturating a given volume of space in the short time frames available for interception of incoming ordnance. However, it also doubles the recoil, making the weapon less accurate during long bursts than its standard counterparts.",Point Defense,,
+,,,,,
+,,,,,
+,,,,,
+# MISSILES MISSILES MISSILES
+,,,,,
+,,,,,
+,,,,,
+#GRENADE
+,,,,,
+,,,,,
+,,,,,
+SCY_grenade,WEAPON," A space-rated scaled-up grenade launcher able to saturate a target's defenses with small and difficult to intercept bomblets. While not the most potent strike weapon of the sector, it brings a welcome mid-range option between high ammunition rockets and high yield missiles.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#ROCKET
+,,,,,
+,,,,,
+,,,,,
+SCY_rocket1,WEAPON," A rocket launcher that fires munitions with strong acceleration and a powerful warhead, but low-grade guidance systems. This single rack launcher fires four rockets in rapid succession and is fed by a three volley magazine. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ Scyan rockets were developed after a simple observation: Since their ships often ambush enemies at short range and at high speeds, missiles with high endurance and precise guiding systems are often not required, but unguided rockets are not an adequate solution either. The Scyan Engineering College was commissioned to create this hybrid: when launched, the ordnance is remotely aimed at the target, then ignites its short duration thrusters along a pre-programmed trajectory. The guidance systems being reduced to a minimum allows for an impressive payload for such a small and fast missile.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_rocket2,WEAPON," A medium sized rocket launcher that fires munitions with strong acceleration and a powerful warhead, but low-grade guidance systems. The twin rack launcher is the somewhat bland result of two simple rocket rack systems welded together, but it is a deadly result nonetheless. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ Scyan rockets were developed after a simple observation: Since their ships often ambush enemies at short range and at high speeds, missiles with high endurance and precise guiding systems are often not required, but unguided rockets are not an adequate solution either. The Scyan Engineering College was commissioned to create this hybrid: when launched, the ordnance is remotely aimed at the target, then ignites its short duration thrusters along a pre-programmed trajectory. The guidance systems being reduced to a minimum allows for an impressive payload for such a small and fast missile.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_rocket3,WEAPON," A massive rocket launcher that fires munitions with strong acceleration and a powerful warhead, but low-grade guidance systems. The large rocket pod is able to launch an fusillade of missiles although lacks in endurance for an extended battle. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ Scyan rockets were developed after a simple observation: Since their ships often ambush enemies at short range and at high speeds, missiles with high endurance and precise guiding systems are often not required, but unguided rockets are not an adequate solution either. The Scyan Engineering College was commissioned to create this hybrid: when launched, the ordnance is remotely aimed at the target, then ignites its short duration thrusters along a pre-programmed trajectory. The guidance systems being reduced to a minimum allows for an impressive payload for such a small and fast missile.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#COASTING
+,,,,,
+,,,,,
+,,,,,
+SCY_coasting1,WEAPON," The Coasting missile is a lightweight LRM that is able to engage distant targets thanks to its hybrid engine and a remote control system. The standard small mount rack holds four missiles of Harpoon tier payload and Pilum tier endurance. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ Most missiles use a rocket engine that can not be stopped once started. While this solution is cheap to manufacture and to deploy, it is a very inefficient one: to increase range, missiles have to be larger, thus limiting the number that can be stored in magazines or increasing the size of the launcher. The Scyan engineers tried a different approach. They created a hybrid engine that can be shut down and restarted several times: once on the correct vector to the target, the remote control system cuts propulsion and the missile coasts without burning fuel until it reaches engagement range. Being in constant line of sight communication with the ship's fire control computers only allows one volley to be in flight at a time, but that is a secondary concern when you can hit a target at virtually infinite range.",Fire Support,,
+,,,,,
+,,,,,
+,,,,,
+SCY_coasting2,WEAPON," The Coasting missile is a lightweight LRM that is able to engage distant targets thanks to its hybrid engine and a remote control system. The commonly used medium sized pod launches two missiles at regular intervals. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ Most missiles use a rocket engine that can not be stopped once started. While this solution is cheap to manufacture and to deploy, it is a very inefficient one: to increase range, missiles have to be larger, thus limiting the number that can be stored in magazines or increasing the size of the launcher. The Scyan engineers tried a different approach. They created a hybrid engine that can be shut down and restarted several times: once on the correct vector to the target, the remote control system cuts propulsion and the missile coasts without burning fuel until it reaches engagement range. Being in constant line of sight communication with the ship's fire control computers only allows one volley to be in flight at a time, but that is a secondary concern when you can hit a target at virtually infinite range.",Fire Support,,
+,,,,,
+,,,,,
+,,,,,
+#CLUSTER
+,,,,,
+,,,,,
+,,,,,
+SCY_cluster1,WEAPON," These MIRV torpedoes house ten small unguided submunitions designed to disperse into a deadly cloud that is difficult to evade or intercept. They are meant to act as both a fleet disruption device and as an anti-ship weapon. The carrier missile only has average stats, but it is programmed to disperse the submunitions beyond PD range to make complete interception difficult. As with all Scyan Missiles, they benefit a lot from ECCM improvements.",Fire Support,,
+,,,,,
+,,,,,
+,,,,,
+SCY_cluster2,WEAPON," These MIRV torpedoes house ten small unguided submunitions designed to disperse into a deadly cloud that is difficult to evade or intercept. They are meant to act as both a fleet disruption device and as an anti-ship weapon. The carrier missile only has average stats, but it is programmed to disperse the submunitions beyond PD range to make complete interception difficult. As with all Scyan Missiles, they benefit a lot from ECCM improvements.",Fire Support,,
+,,,,,
+,,,,,
+,,,,,
+#LASER
+,,,,,
+,,,,,
+,,,,,
+SCY_laser2,WEAPON," The warheads of these torpedoes harvest the fury of X-rays created by a directed nuclear explosion to produce thin beams of radiation able to damage targets without requiring a direct hit. The medium version holds four torpedoes launched at a moderate initial speed. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ While only a fraction of the nuclear explosion's energy can be directed, not having to deal with point-defenses during the last moments of approach gives these weapons a tremendous advantage compared to traditional torpedoes. Some compromises had to be made to the design though. To avoid the risk of completely missing their target, the rays are produced in a spread pattern: Thus rarely delivering its full power to a single ship, but even so will even more rarely deliver none. In addition the guidance system has to be more precise to aim the rays before detonation, at the cost of overall speed.",Strike,,
+,,,,,
+,,,,,
+,,,,,
+SCY_laser3,WEAPON," The warheads of these torpedoes harvest the fury of X-rays created by a directed nuclear explosion to produce thin beams of radiation able to damage targets without requiring a direct hit. This version holds 15 torpedoes that are launched at their maximum velocity. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ While only a fraction of the nuclear explosion's energy can be directed, not having to deal with point-defenses during the last moments of approach gives these weapons a tremendous advantage compared to traditional torpedoes. Some compromises had to be made to the design though. To avoid the risk of completely missing their target, the rays are produced in a spread pattern: Thus rarely delivering its full power to a single ship, but even so will even more rarely deliver none. In addition the guidance system has to be more precise to aim the rays before detonation, at the cost of overall speed.",Strike,,
+,,,,,
+,,,,,
+,,,,,
+#ARC
+,,,,,
+,,,,,
+,,,,,
+SCY_arc,WEAPON," Favoring distraction and opportunity creation, these missiles bring a small scale EMP emitter in range of a target instead of an anti-ship payload. Their targeting computer is programmed to circle enemy ships instead of trying to score a direct hit, allowing them to evade both short range PD defenses and defeat front shields. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ In an attempt to break combat stalemates the Scyan Navy's doctrine was very susceptible to the admiralty tasked the Engineering College to investigate the idea of portable EMP emitters fitted to a drone frame. Supercooled magnetic coils were one of the most common things in the Scyan laboratories and workshops, but a drone vehicle that would fit in anything smaller than a carrier's launch deck was something else entirely. While the team developing the emitter managed to produce a working prototype even before the deadline, the team responsible for designing the drone itself was still arguing about fuel types, power sources and what UAC to base the modification on. Rather than spending additional resources on a project unlikely to yield an acceptable result, the Navy cancelled the program and looked into other potential applications for a such a disruptive device. 
+
+ Given the size and range of the EMP emitter, only two vehicles were deemed suitable: it could either be used on a fighter as a close in weapon system, or on a missile. The fighter development quickly lead to the Ker-class bomber ship system, but once again there was a slight issues with the missile design. Like for the Ker, the projectile was intended as an interception system, launched at incoming missile volleys and disabling their engines. But the mass of the emitter limited the acceleration of the missile, with interceptions occurring well after the hostile ordinance adjusted its course for impact, negating the effect of disabling their engines. Fortunately a second path of development lead to the creation of an offensive missile that would circle a target at a reasonable standoff distance frying its exposed components. In a somewhat convoluted design process, the engineers finally fulfilled the original requirements of the initially abandoned project.
+
+ These missiles are rather large and bulky due to their complexity, thus the rate of fire is low and and they have limited engine performance. Scyan fleet commanders are advised to only use them against high value targets to open a window of opportunity for a decisive victory.",Close Support,,
+,,,,,
+SCY_arcSmall,WEAPON," Favoring distraction and opportunity creation, these missiles bring a small scale EMP emitter in range of a target instead of an anti-ship payload. Their targeting computer is programmed to circle enemy ships instead of trying to score a direct hit, allowing them to evade both short range PD defenses and defeat front shields. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ In an attempt to break combat stalemates the Scyan Navy's doctrine was very susceptible to the admiralty tasked the Engineering College to investigate the idea of portable EMP emitters fitted to a drone frame. Supercooled magnetic coils were one of the most common things in the Scyan laboratories and workshops, but a drone vehicle that would fit in anything smaller than a carrier's launch deck was something else entirely. While the team developing the emitter managed to produce a working prototype even before the deadline, the team responsible for designing the drone itself was still arguing about fuel types, power sources and what UAC to base the modification on. Rather than spending additional resources on a project unlikely to yield an acceptable result, the Navy cancelled the program and looked into other potential applications for a such a disruptive device. 
+
+ Given the size and range of the EMP emitter, only two vehicles were deemed suitable: it could either be used on a fighter as a close in weapon system, or on a missile. The fighter development quickly lead to the Ker-class bomber ship system, but once again there was a slight issues with the missile design. Like for the Ker, the projectile was intended as an interception system, launched at incoming missile volleys and disabling their engines. But the mass of the emitter limited the acceleration of the missile, with interceptions occurring well after the hostile ordinance adjusted its course for impact, negating the effect of disabling their engines. Fortunately a second path of development lead to the creation of an offensive missile that would circle a target at a reasonable standoff distance frying its exposed components. In a somewhat convoluted design process, the engineers finally fulfilled the original requirements of the initially abandoned project.
+
+ These missiles are rather large and bulky due to their complexity, thus the rate of fire is low and and they have limited engine performance. Scyan fleet commanders are advised to only use them against high value targets to open a window of opportunity for a decisive victory.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+#SWARMER
+,,,,,
+,,,,,
+,,,,,
+SCY_swarmer,WEAPON," The Heavy Modular Swarmer launches 60 micro missiles nearly simultaneously that can randomly targets all nearby hostile vessels, making this weapon useful against large numbers of fighters. By sheer virtue of numbers, they saturate point-defenses, and can create a protective screen for more powerful ordnance. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ The miniaturized swarm missile is a further development of the Anti-missile Missile: the lightest possible frame, a reasonably fast and durable engine, a lower grade guidance package and more or less no payload beyond its fuel and mass. The end result is so small that it can be stored in the hundreds. Of course one missile itself barely registers as a threat, but when 60 of them are launched at once they cannot be ignored.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+#SINGULARITY
+,,,,,
+,,,,,
+,,,,,
+SCY_singularity,WEAPON," While not very effective as a conventional weapon, the Singularity Torpedo generates a micro singularity upon impact with a target, ""sucking"" in all nearby missiles, fighters and even smaller ships. WARNING! Elysean captains are reminded that all objects are subject to the gravitic pull, friendly fire is possible. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ By itself, the singularity generator (built upon the well known artificial gravity principle) can not affect multi-kiloton spaceships significantly. However if it connects to a hull of sufficient mass, it then uses it as a gravity anchor, multiplying its mass several hundred times for a brief instant, pulling everything nearby into this short lived gravity well. The effect is proportional to the mass of the impacted ship: with a frigate, only the closest strike crafts will be nudged, but if it is a capital ship then all nearby space will be cleared of missiles, fighters and frigates.
+
+ This weapon system has a grim origin story. While many ships in the Sector are old enough to have been extensively modified and customized to better fit the needs of their captain, if there is one system that is never ever tampered with, it is the artificial gravity generators. Most models are equipped with tiled floor panels, each containing their mysterious gravity generator sandwiched between ceramic plates and connected to the power grid. When a panel fails, it is replaced without question and usually sent back to the nearest autofactory for recycling. For a Nation as resource starved as Scy during their corsair era, reclaiming those systems chock full of rare elements was a priority. Even more so after the 197 crisis that saw nearly a third of the Scyan Navy destroyed. It was during a zero G dismantlement operation that a worker failed to notice the floor plate he had just detached still was retaining some residual energy. The exact circumstances are still nebulous to this day but what is believed to have occurred is that this worker had secured the stack of free tiles to what was most likely a conduit in contact with a damaged power line. Further inside the hulk, the team tasked with salvaging the central power plant emptied the accumulators into the dead energy grid. From the inside, the brutal activation of the pile of gravitic devices in contact with the hull did not have any perceptible effect, but the seventy three crew working on the surface of the hull were instantly transformed into splashes of thin red goo, including the worker's wife.
+
+ Any other organization in the Sector would probably have qualified the event a freak accident and filed a report, but Scyan engineers are tinkerers: They wanted to know if not the why, at least the how such an event had occured. Fourteen months later, and several more accidents, they presented to the Admiralty the new missile-mounted combat-grade floor plates. After a short demonstration, the officers stopped laughing at that sentence.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+#PHASE
+,,,,,
+,,,,,
+,,,,,
+SCY_phased,WEAPON," With recent progress in phase coil and capacitor miniaturization, the Scyan Engineering College was able to develop Phase-capable torpedoes. Staying out of harms way for the majority of their flight, the missiles are unarmored to allow for a propulsion system with more endurance. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ Manufacturing a phase coil system small enough to be mounted in a missile was not particularly challenging, salvaged Terminator drones gave the research team a great base to reverse-engineer from. Making it work on a power source small enough to be mounted in a missile however was far more complicated. It is only after data in super-conducting coils and high-yield miniature capacitors could be bought from ex-TriTachyon engineers that the system was able sustain a phased state for more a few seconds. But even then just activating the phase coils would expend most of the energy stored. The project remained a dead end until one of the engineers tried an ingenious technique to phase the missile using a secondary external system an instant before launch. Using this brilliant method the activation of the miniature phase system only requires 7% of the energy typically required by standard phase systems, thus making this weapon finally viable in combat.",Fire Support,,
+,,,,,
+,,,,,
+,,,,,
+#ANTIMISSILE
+,,,,,
+,,,,,
+,,,,,
+SCY_anti1,WEAPON," A completely stripped down Anti-missile Launcher enabling it to be fitted to even the lighter frames. Unlike its modular cousin, this version has a very limited ammo capacity and is unable to sustain the same fire rate. It is nonetheless a very potent point-defense system unlikely to fail to intercept any dangerous incoming threat, provided it is able to launch in time. As with all Scyan Missiles, they benefit a lot from ECCM improvements.",Point Defense,,
+,,,,,
+,,,,,
+,,,,,
+SCY_anti2,WEAPON," Missile-based point-defenses are not completely unknown in the Sector, but most such weapons systems have been lost throughout the ages as no Domain UAC survived to rebuild them. The single greatest benefit of such an interception method is the ability to target missiles at long range over allied ships without risking friendly fire. The main drawbacks being the much greater time to target, and difficulty in handling sustained missile barrages. As with all Scyan Missiles, they benefit a lot from ECCM improvements.
+
+ At their core, these missiles closely resemble the Swarmer they were based upon. The frame has been lightened moderately, and the payload significantly reduced in order to house additional attitude thrusters and further raise the overall engine performance. While developing the projectile itself went as smoothly as an engineer could hope, the targeting system had more issues. Against isolated threats the weapon performed admirably, but when facing multiple incoming threats from many different angles of attack its efficiency dropped sharply, especially when using several of them in a battery. The operators obviously targeted the most pressing danger, but then only that particular threat would be intercepted multiple times over, leaving the door open for the other projectiles to hit while the weapon reloaded. A semi-randomized targeting solution system was deemed insufficient as it would statistically fail to adequately spread the PD missiles at some point, and if there is one thing you do not want to rely on in a battle, it is chance. 
+
+ Installing a separate internal communication network in each missile launching pad of a ship to distribute the targeting priorities was simple enough. Suddenly the weapon became able to perform adequate interceptions... Until large scale simulations were conducted. The same issue cropped up again when multiple ships targeted the same threats. A fleet-wide targeting network was necessary, but installing such a system into the weapon significantly increased its size and cost of production. After medium mount sized version was successfully tested, the then freed from the cramped constraints of a small mount chassis the engineers added several improvements to the design: Better consoles for the operators, thickened armor plating, and additional ammo that could be stored in the ready rack inside the turret, allowing better efficiency against sudden bursts of threats while the inner magazines were conveyed ammo. The independence from the ship's internal comm system meant that even in the case of an overload, the weapon could maintain an up-to-date threat list, allowing it to resume interceptions as soon as the systems were back online with maximum efficiency.",Point Defense,,
+,,,,,
+,,,,,
+,,,,,
+# SPECIAL SPECIAL SPECIAL
+,,,,,
+,,,,,
+,,,,,
+SCY_stymphalianMain,WEAPON," A lightweight but powerful railgun that trades range and fire rate for increased destructive power. Since the target of predilection of the Stymphalian Birds are capital ships, the weapon relies on the frigate's ship system to overcharge the weapon to pierce heavy armor. While very precise, the low rate of fire makes it poorly suited against light and maneuverable ships. Although when it does connect, the target is often severely damaged, or even utterly destroyed in case of a charged shot.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_sirenMain,WEAPON," Long range artillery that propels a standard anti-shield EMP ordnance, or a special miniaturized one-shot phase teleporter covered in superconductive magnetic paste. If the later connects with a hull, the teleporter activates, transporting the ship closer to the Siren.
+
+ The mass of the shell is inadequate to efficiently puncture the armor of most large ships, as this weapon is designed for capture operations. Siren-class cruisers are built around this massive weapon, and their conventional firepower is rather limited. Due to the need of keeping close control on such a battle shaping weapon, only Sirens directly under the Commander's control are authorized to use teleporting ordnance. When not under direct supervision, the gun is loaded with a powerful Kinetic/EMP charge.",Close Support,,
+,,,,,
+,,,,,
+,,,,,
+SCY_khalkotauroiMain,WEAPON," The main armament of the Khalkotauroi-class cruisers. This weapon spans almost the entire length of ship itself and can produce a deadly beam for sustained periods of time. This size makes it quite vulnerable, and so it has been separated into six independent modules to avoid a complete failure when receiving battle damage. Those modules can be destroyed individually, reducing the output of the weapon.
+
+ The main reactor produces a stream of high energy exotic particles. This stream is then accelerated by several independent supercooled electro-magnets. After this acceleration, the particles are so fast and highly charged that they emit gamma radiation when impacting matter, hence the name of the weapon. 
+
+ The accelerator pods all contribute to its energy output, but none are otherwise essential: it will still remain operational after loosing several, or even all of them. However in this last case the weapon can barely do more than scratch frigate armor and it would instead be preferable to remove the ship from combat.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_mrm,WEAPON," The Erymanthian Boar launcher fires twelve reliable medium range missiles equipped with a shield piecing high density tip. This allows for 360 degrees of coverage with a swarm of light missiles that would be wise to not ignore.",Assault,,
+SCY_mrm2,WEAPON," The Erymanthian Boar side launcher fires six reliable medium range missiles equipped with a shield piecing high density tip. This allows for 360 degrees of coverage with a swarm of light missiles that would be wise to not ignore.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_smallMrm,WEAPON," The Argus launcher fires four reliable medium range missiles equipped with a shield piecing high density tip. This allows for 360 degrees of coverage with a swarm of light missiles that would be wise to not ignore.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_telchineMain,WEAPON," The main tool of the Telchine-class mining ship, this beam can be used in combat to reduce the hull integrity of the target at a constant, if slow, rate upon direct hit. It is however a mining device, and due to safety measures it is designed to be thoroughly useless against shields.
+
+ Combining a low intensity energy beam with an oscillating tractor beam, this tool is used to fragment asteroids and then extract useful ore from the rubble. It is only by accident that its combat effectiveness has been recently observed. While the beam does only minor damage to armor, the alternating pull force and directed energy induces great stresses to the ships structure, rapidly reducing its integrity.
+
+ The effect is however almost null on shielded targets, and the machinery so cumbersome that it is unable to be fitted to a modular mount. For these reasons no combat grade version of the Deconstruction Beam has been developed, but it still gives mining ships a way to defend themselves against small time pirates.",Assault,,
+,,,,,
+,,,,,
+,,,,,
+SCY_ketoMain,WEAPON," This colossal artillery system is the signature weapon of the Keto-class siege carrier. With an extreme range and EMP disruption over a large area upon impact, the Keto is able to support its wings without putting itself at risk.
+
+ At its core, the Keto is a compact synchrotron able to accelerate heavy ion particles to relativistic speeds in a matter of seconds. The stream is then condensed and aimed at the target with the superconducting electromagnets housed in the Astrapios. On impact, the charged plasma bolt constituents disrupt shields and disable electronic systems.
+
+ The mass of the weapon was troublesome for the engineers responsible for the superstructure design. In spite of their best efforts there is still some structural weaknesses near the base of the barrel. This is usually not a problem as the Keto is not interned to participate in direct combat.",Fire Support,,
+,,,,,
+,,,,,
+,,,,,
+# SHIPS SHIPS SHIPS
+,,,,,
+,,,,,
+,,,,,
+# FIGHTERS FIGHTERS FIGHTERS
+,,,,,
+,,,,,
+,,,,,
+SCY_eris,SHIP," The Eris-class light interceptor only got their designation recently due to the incremental nature of the changes made to their Talon-class predecessor. Talons have almost always been used by the Scyan Navy, either on stations as an emergency defense force (given how easy it is to store them by the hundreds) or during Great Expeditions for short range infiltrations and decoy operations. That did not prevented the deck mechanics to tinker with them: their inherent simplicity made them easy to tailor to their pilot or the mission. But when the Admiralty decided to create a new serie with a different armament, a name change became necessary. Now sporting a pair of high velocity Rotary Vulcan and improved engines, the Eris-class interceptor is the new standard light fighter for the Scyan Navy.
+
+ Being hardly that different from their original model, the initial designation of the rearmed craft was Talon (+) but it did not stuck as more modifications where implemented. With the multi-barreled weapon slightly bigger, the twin rotaries were placed on each side of the cockpit unlike the original Vulcan gun's cockpit-side mount. The armor had to be ever so slightly shaved around to accommodate the modification, which left some room to the back for more responsive engines. Despite the reduced protection, sims showed similar vulnerabilities between Erises and Talons to flak and PD weapons, thanks to the shorter exposition time and heightened traverse speed. That is not to say Erises squadrons would not suffer terrible losses against a well prepared enemy, but at least they can do some damage before being put out of combat.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_akhlys,SHIP," The Akhlys-class support fighter was an emergency development for a solution to the vulnerability of Scyan ships to bomber attacks. Having no dedicated defense light craft in their UAC library, the Engineering College had to build them upon a drone chassis. The only model they had was huge for an unmanned vehicle, designed for long range prospecting and sample retrieval. It had plenty of mass and thrust to spare, so the addition of a cockpit and a weapon emplacement was possible without impacting its performance very much. The modification was rough and unsophisticated: a crude first draft to be mass produced quickly until a better replacement could be created. 
+
+ So crude in fact that the Admiralty started to distribute infamous ""conversion kits"" allowing to blend together standard CIWS drones and cargo containers into wings of barely spaceworthy fighters. They did the job, but the improvised construction lead to structural failure rates of nearly 25% per sortie. The death toll was so high that being assigned to them was used as a bargaining chip when crewmen faced diciplinary charges. Since those dark times, the design has been refined multiple times and is now equipped with a decent armor array, upgraded avionics, fully reinforced cockpits, and the most modern targeting systems available. Certainly no longer the flying coffins they once were, even if that moniker stuck. With so much added mass their top speed has been significantly reduced relegating them to escort duties, but that is a role they can fulfill admirably.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_panotti,SHIP," The Panotti-class grenadier is a very light bomber relying on defense saturation to land some hits on a target. At the time of their inception in the Great Expedition fleets, they took many captains off guard with their raw speed being more in line with light interceptors than conventional anti-ship strike-crafts. Their defenses however are laughable and they are ill-suited to assault a well-prepared force.
+
+ Developed during the dark days of the early Great Expeditions, Panottis are to bombers what Talons are to interceptors: the simplest, cheapest frame able to get the job done even if it is at a ridiculous attrition cost. Most improvements since have concentrated on improving the survivability of ejected pilots instead of the fighter itself as to maintain its delicate balance of cost-effectiveness and thrust-to-weight ratio.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_nosos,SHIP," The Nosos-class interceptor is an extensively modified copy of a salvaged Broadsword fighter UAC. Rearmed with short range pulse beams and a single shot kinetic sabot round to break light shields, this variant is well suited to fend off incoming bomber wings.
+
+ The Scyan Navy actually used standard Broadswords for a time before submitting a list of modifications to the Engineering College. Many of the requests were regarding interchangeable standardized components to reduce their maintenance burden, but a few others were to focus its role more towards the interception of enemy fighters. To better fit this intended task the new design was equipped with twin pulse beam weapons perfectly suited to deal with small targets. However early testing showed some shortcomings when facing shielded bombers, with the beams unable to overload the generators before the enemy could launch their payload. The subsequent revision featured the addition of a single shot nose-mounted high velocity kinetic penetrator weapon.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_stygere,SHIP," The Stygere-class heavy fighter is indeed both large and heavy, but that is not so much a sign of power rather than the consequence of fitting a shield generator to the cramped space-frame of the Gladius. The armament was also modified to utilize easy to manufacture Light Energy Blasters, and two internally mounted rockets to defeat shields in place of the machine guns.
+
+ The addition of a shield generator was not an issue at first, but when the armament was upgraded to Triple Energy Blasters, the power plant also had to be upscaled and the entire design spiralled out of control. It took months of debates between the Admiralty and the Scyan Engineering College to find a reasonable middle ground between maneuverability, defense and firepower. In the end, the new craft is only equipped with two Light Energy Blasters and two rocket tubes. A mild armament upgrade upon the original hull, but the armor had to be significantly reduced in order to retain an acceptable thrust to mass ratio. Fortunately the shield is more than enough to compensate and the only clear cut from the original design is the lack of any point-defense.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_ker,SHIP," Specifically developed at the same time as Cluster Torpedoes as a means to deploy them cheaply; the Ker-class bomber is the primary strike craft heavy weapons platform of the Scyan navy.
+
+ The prototype resembled a chimera nightmare, with parts cannibalized from a myriad of sources. The primary frame was a Nosos interceptor hull cut in half, the shield came from a mining drone, the defense system was a byproduct from the creation of the Arc Missile, and all of this was welded to a torpedo launcher lightened by removal of its mass driver. Only the engines were a slightly custom design though rather rudimentary at the time. The performance of the concept was evaluated as sufficient enough to be refined upon further. The second much more advanced prototype went through testing loaded with a heavy torpedo typically used in capital ship sized launchers. While the craft had excellent results attacking passive targets, moving or not, it was not maneuverable enough to avoid missiles, and too slow to launch its payload with enough velocity to avoid defensive fire.
+
+ The engineers had to reduce the submunition count and strength of the propulsion system of the torpedo to make it lightweight enough for the craft to survive. The end result is a bomber with decent speed and survivability, that can attack from outside of point-defense weapon range. While attacking from afar reduces their hit ratio, it also prevents the Ker from typically receiving any damage, and decreasing the length of each deployment from the carrier.",,,
+,,,,,
+,,,,,
+,,,,,
+# FRIGATES FRIGATES FRIGATES
+,,,,,
+,,,,,
+,,,,,
+SCY_centaur,SHIP," In an effort to extend the operational range of light recon missions, the Scyan Navy commissioned a swift frigate-sized hauler ship. Fast, reliable, relatively discreet for a civilian hull, having a decent cargo and fuel capacity while not defenseless in case of interception. Since the Scy Nation revealed its existence to the rest of the Sector this ship model has quickly become a smuggler's favorite despite not being cheap and somewhat difficult to come by outside of Tartarus.
+
+ From the contract assignation to the delivery of the first prototype and validation for production, only 34 days had passed. This record still holds today and is unlikely to ever be broken. This can be explained by the robust and simple design, and the exclusive use of standardized components. The end result is an efficient ship, with a surprisingly small crew requirement, though it performs poorly in combat when minimally crewed. The use of an external pod attachement as a cargo bay allows an extreme versatility in fleet usage, where a commander can order the loading of a resupply mission for one of his secondary fleets, and observe the ship depart before finishing his coffee.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_tisiphone,SHIP," Tisiphone-class is the standard attack frigate in Scyan fleets. They are quite agile, and sport an impressive amount of frontal fire-power for their size that makes them a threat up to to and including cruisers when caught alone. This ability to bring light destroyer grade firepower to point-blank range of any target is an impressive feat, but to achieve this level of performance, the engineers had to make sharp compromises in several key areas.
+
+ The schematics could be explained in a grossly oversimplified manner as a huge engine assembly with barely enough reaction mass to last a single battle, two medium weapon hardpoints directly attached to it, a decent flux capacitor array and a tiny bridge in front. To reduce the mass, the ship is merely protected by fighter grade armor plating, the cargo hold has been omitted as has the fuel cell storage, and the frame lacks any life support system: the crew has wear a space suit for the duration of the deployment.
+
+ Furthermore, the keen observer will have noticed the complete absence of defensive turrets. Indeed point-defense is managed by an Anti-missile system specifically modified to fit the cramped hull. These tiny missiles are essentially directly attached to the exterior hull and are very efficient at intercepting other missiles, but utterly useless against fighters and suffer from a poor ammo capacity as well. Once depleted, the frigate can find itself in a very unfavorable position against missile equipped ships.
+
+ The only ""true"" defensive concession is the Dual Layer Shield system. Scyan technology concerning shielding never developed much beyond its civilian origin, with their emitters usually having high energy requirements and an abysmal damage absorption even with a narrow 90 degree protective arc. But when engaging a single target that arc could be somewhat safely reduced, raising the ""thickness"" of the shield, thus its efficiency, quite significantly. This allows the Tisiphone to reach its attack range while still having enough flux overhead to fire efficiently. 
+
+ With the narrow shield, an engine malfunction usually is a death sentence for the crew. Still, the extreme speed and maneuverability allows experienced pilots to hit far above frigate weight class, especially when pursuing fleeing ships. They are usually deployed in duos, one drawing fire and forcing the enemy to raise their shield, the other engaging the flanks.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_megaera,SHIP," A brutal design, utilizing all of Scy's engineering strengths to maximize its efficiency on the battlefield. Sharing many of its base features with the Talos, the Megaera-class sports an unusually strong frontal array of four hardpoints placed directly on top of the main energy bus from the reactor. With a flip of a switch, the captain can disable all weapons safeties and put them in overdrive for an intense burst of firepower. In an attempt to avoid damaging those weapons, their range is artificially limited while the system is active, however they still often trigger the emergency breakers when submitted to this treatment for any length of time.
+
+ Both the Megaera and the Talos were part of a late Corsair-era initiative to increase the survivability of Scyan frigates as the Great Expeditions met increasingly stronger opposition. Designed to be able to fight effectively by itself, but optimized to work in tandem: A Talos taking potshots at the enemy drawing its attention, its Megaera wingman ready to pounce at any opportunity window.
+
+ Despite being one third larger (and almost twice the mass) than other Scyan frigates, the Megaera is only slightly slower thanks to its oversized propulsion system, even by Scyan standards. While the twin-engine design is not exactly common in the fleet, the underlying chassis is actually very similar to the old civilian shuttle design all their frigates are derived from... With a reversed and slightly enlarged hull layout. As the fleets travelled farther and farther into enemy territories to find less protected ""secure"" trade routes, cargo capacity and fuel storage received particular attention allowing these designs to take part in long range recon missions. These features made them more suitable to act as independent units, unlike other more combat focused hulls like the Tisiphone that require constant fleet support for maintenance.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_talos,SHIP," A recent design intended to be able to withstand more punishment than the others Scyan frigates while retaining good speed and average firepower. Created alongside the Megaera-class frigate, the engineers tried to keep what worked best in other frigates classes and merged those traits into a larger hull. With nearly twice the size and mass of its cousins, these ships are heavy for their classification but are still able to keep up with other frigates thanks to its unusual twin engine. Unlike the Megaera that doubled down on firepower, the Talos design places emphasis on shielding and armor.
+
+ The first trials with this new design were quite unsuccessful, not because of any design flaws, but due to the very different flight profile: it handles more like a light destroyer than a frigate, and any maneuver must be more carefully planned. Its vulnerable rear, initially exacerbated by the reduced turn speed, has been almost nullified by the addition of the Stasis Shield System. This allows nearly instant deployment of the shield into an invulnerable bubble. While this system can not be sustained for long, it allows pilots to soak damage that would otherwise overload the reactor or destroy the ship.
+
+ Both the Talos and Megaera are also able to operate more independently from a fleet thanks to their more generous cargo hold and fuel reserves. Not that it was difficult to beat the truly anemic autonomy of specialised combat designs like the Laelaps. To the great appreciation of the admiralty, this increased liberty of operation led to the creation of a new breed of more aggressive captains ready to venture farther from their fleet. Preferring to use raiding techniques to put defending fleets off balance against the bulk of the force.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_alecto,SHIP," The Alecto-class frigate is a specialized recon vessel born from the lack of range with most older Scyan frigates. With four turrets that traverse wide arcs, this class excels at defending itself against anything fast enough to catch it. However the Alecto fares poorly against heavier opponents, therefore the doctrine concerning this class is quite clear: If you can outrun it, do so (and if possible lure them into a trap)! In larger engagements, this class can also be equipped as very competent PD boats for a reasonable supply footprint.
+
+ This design is quite reminiscent of its original civilian dropship shuttle it was based upon, with the somewhat protected front for atmospheric entry and the large side bays now sharing space with ammo magazines. This incarnation is however purely spaceborne, as virtually every other altered Scyan design is. For a fleet so reliant on speed and maneuverability, landing gear, thermal shielding, retractable wings etc, is completely useless mass and wasted acceleration.
+
+ The Scyan Navy debuted with destroyer sized converted freighters, but this was their very first frigate design to see actual combat. The admiralty was so satisfied by its performance that it received almost no subsequent alteration.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_lealaps,SHIP," The Laelaps-class frigate is lightly armored but extremely agile, and with three missile hardpoints they can deal significant damage as long as the ammo reserves hold up. Their somewhat narrow scope of use is compensated for by their extreme efficiency in carrying it out. As a long range missile support, they are unlikely to ever get caught and as a short range rocketeer, few ships of this size can approach the burst of damage they can inflict.
+
+ Designed right after the Tisiphone-class frigates, these ships followed the same general design principles: powerful engines, decent flux capacity, impressive armament, but minimal armor and no cargo whatsoever. Some detractors stated that if this design had been just a 25% smaller, it would have been considered an exceptional fighter instead of an expensive and fragile frigate. But of course these same detractors never had to experience three torpedoes launched simultaneously at their vessel.
+
+ Still they are correct on one point: whether it is at long or short range, Laelaps frigates are meant to destroy a single target with overwhelming power... But unlike fighters are unable to dock on a carrier to reload their launchers mid battle. This severely limits their role in larger engagements except for mop-up duties: Rare are the Scyan commanders that do not keep one or two Laelaps in their fleet to pursue and destroy even the fastest retreating ships.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_stymphalianbird,SHIP," Extremely high-end frigate specifically designed to duel ships several times larger than her and emerge victorious. A rare sight, and a bad omen according to superstitious people. It is unclear how the Scyan engineers managed to build such a vessel. The main feature of this ship is its experimental phase teleporter. Besides the surprisingly fast operating cycle, it can reach ""deeper"" level of phase space and harness the high energy particles present there to enhance the ship's functions for a short moment.
+
+ During this overdrive phase, the engines are more responsive, the shield can deploy instantly and with a better damage absorption, the main weapon can fire much more powerful shots or the teleporter can be reused a second time without delay.
+
+ Another curious feature is its extremely reduced crew count: only one pilot is required. Some rumors persist that this is a diversion and the ship is actually piloted by a full Alpha+ AI, others contend that the effects of the experimental teleporter is much worse than conventional ones on the human psyche, driving the crew mad after a couple of deployments. Another curious fact is that there is no known pilot of the Stymphalian Bird, spawning even more rumors about unnatural blending of flesh and metal, or human brains entirely grown for the purpose of controlling these ships. These rumors have been repeatedly denied by the military, but the unusual amount of secrecy and classified data around this ship prevents them from dying. The number of Stymphalian Birds built is classified data, but some estimates go as low as only seven models currently in service.
+
+ Between the incredible feats of engineering and the hushed gory gossip surrounding it, this class attained almost a legendary status in the Sector. Right up there alongside talk of freak ships absorbing incoming projectiles to regenerate themselves, alien weaponry stolen by religious fanatics, black hole riding elongated hulls of bio-metal or even stranger sleeping artifacts scattered throughout the Sector...",,,
+,,,,,
+,,,,,
+,,,,,
+# DESTROYERS DESTROYERS DESTROYERS
+,,,,,
+,,,,,
+,,,,,
+SCY_telchine,SHIP," While most basic ores are extracted from the Mining Colony, the ever hungry shipyard also requires more exotic materials that can only be found in asteroid belts. To extract these, the Scyan Engineering College created the Telchine-class mining ships. The design barely qualifies as a ""ship"", as it is more a crude assembly of vacuum grade machinery directly welded to a freighter hull. About the size of a large destroyer, these ships fracture asteroids with their spinal beam weapon and extract all useful materials with the help of their mining drones.
+
+ Because the refinement of collected materials can only be done directly in the shipyard, or the ships would have been too large to navigate safely in the asteroid fields, the on-board metalwork facility separates the ore from the useless rock and only processes it into an easily transportable form.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_baliusF,SHIP," Unlike most of the transports in the Sector, Scyan freighters are expected to keep up with the fast warships they follow. Thus, and despite being civilian in nature, the Balius-class freighters are equipped with the latest military engines, stealthy plating and shielded engine ports available. While only armed with token weaponry, most of the time they can avoid combat altogether.
+
+ The Balius is a further development of one of the very few commercial venture from the pre-collapse Science Colony of Yggdrasill. With the help of the Fabrique Orbitale ship manufacturer they tried to create a shipping vessel more suited for long range fast delivery to fringe worlds and beyond. Such a ship would have been very useful to the colony as they spent the majority of their time far from any inhabited world, far from any assistance in case of trouble. Fabrique Orbitale supplied a Buffalo-grade hull with a more modular attachement design, while the S.C.o.Y. used their expertise in materials and advanced knowledge of field containment to produce their signature Magneto-hydrodynamic Aerospike engine design. While the hallmark of the Buffalo was its low price, this new freighter could compete in running costs from sheer speed alone. And the various specialized containers were aimed to appeal to isolated worlds that could not afford maintaining a fleet of multiple ships for every task.
+
+ The design was waiting final Domain approval to begin mass production when the Great Collapse occured. 
+
+ As the Scyan Navy was being created, they could only rely on their few civilian ships still in working order with mining tools haphazardly strapped on. The only decently sized hull they could actually build was this unproven design. With time, and thanks to their intimate knowledge of the blueprint, the Engineering College was able to convert it into many types and classes of ships, but at their core they all share the same spinal structure and similar engine assembly.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_baliusT,SHIP," Unlike most of the transports in the Sector, Scyan freighters are expected to keep up with the fast warships they follow. Thus, and despite being civilian in nature, the Balius-class tankers are equipped with the latest military engines, stealthy plating and shielded engine ports available. While only armed with token weaponry, most of the time they can avoid combat altogether.
+
+ The Balius is a further development of one of the very few commercial venture from the pre-collapse Science Colony of Yggdrasill. With the help of the Fabrique Orbitale ship manufacturer they tried to create a shipping vessel more suited for long range fast delivery to fringe worlds and beyond. Such a ship would have been very useful to the colony as they spent the majority of their time far from any inhabited world, far from any assistance in case of trouble. Fabrique Orbitale supplied a Buffalo-grade hull with a more modular attachement design, while the S.C.o.Y. used their expertise in materials and advanced knowledge of field containment to produce their signature Magneto-hydrodynamic Aerospike engine design. While the hallmark of the Buffalo was its low price, this new freighter could compete in running costs from sheer speed alone. And the various specialized containers were aimed to appeal to isolated worlds that could not afford maintaining a fleet of multiple ships for every task.
+
+ The design was waiting final Domain approval to begin mass production when the Great Collapse occured. 
+
+ As the Scyan Navy was being created, they could only rely on their few civilian ships still in working order with mining tools haphazardly strapped on. The only decently sized hull they could actually build was this unproven design. With time, and thanks to their intimate knowledge of the blueprint, the Engineering College was able to convert it into many types and classes of ships, but at their core they all share the same spinal structure and similar engine assembly.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_hydra,SHIP," Initially a one-off test-bed chassis built during the prototyping of the firsts cruiser sized Scyan engines. It has then been used as an integration test for various systems to the point it could almost be considered a combat-worthy ship. Many would consider it an impractical, under-gunned combat ship with an oversized power plant and engine, but a potentially effective one nonetheless. The improvized demonstrator impressed the admiralty enough for them to allocate more research and development time to refine the prototype into a production-ready design.
+ 
+ The end result was a destroyer capable of absorbing as much firepower with its shield as many cruisers while having near frigate-tier speed and maneuverability. The blueprint incorporates a Weapons Safeties Shunt system to make the most of its deceptively puny armament. The super-structure inherited the robustness of its test-bed predecessor and can undergo extensive combat modifications. On the other hand, the original version was never intended to travel far from Elysee, and this next iteration retained the limited cargo and fuel capacity, as well as the cramped crew quarters. Also compared to other Scyan stealthy destroyers, it lights up on scanners like a pulsar. An unusual characteristic that has since been skilfully used to dupe enemy captains.
+
+ As strange as it appears on paper, this destroyer design has been successfully used in almost every combat situation thanks to its versatility, generous turret arcs and unparalleled engine performance.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_geryon,SHIP," Sometimes depicted as an over-sized Laelaps, the missile heavy Geryon-class destroyer is indeed a hunter-killer. Capable of bringing three heavy launchers to point-blank range of any cruiser then wipe it from the face of the Sector, and equipped with additional thrusters to escape any retribution. These ships are some of the most vaunted war-machines in the Sector. To accommodate the installation of the internal missile magazines, the design saw most of its out-of-battle capacities reduced to a minimum, including cramped crew quarters and very limited cargo capacity.
+
+ Embodiment of the Scyan doctrine of ""Hit hard and fast"", the Geryon fares better in short engagements and pursuits due to its limited ammunition capacity. It can also be significantly countered by strong point-defenses. This leads to more strategic deployment decisions. Unlike its versatile Lamia cousin, Geryons needs to be specialized and sent into combat with a specific goal in mind, but used at the right moment it is a powerful tool capable of turning the tide of a battle. Scyan Admirals are trained to refrain from sending them into the fray too early and wasting their potential against fresh targets with their point-defenses ready. When properly outfitted they can also be quite effective at long range engagements, as long as their stockpile of munitions lasts. 
+
+ A very efficient division composition is a Geryon together with a Lamia destroyer and a pair of Alecto frigates for cover.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_geryonH,SHIP," Sometimes depicted as an over-sized Tisiphone, the standard Geryon-class sports an unusually large amount of firepower for a Scyan ship at the cost of a very limited resilience to be able to keep up with other Scyan ships. Internally very close to its Lamia-class predecessor, the design made extensive use of the same modular heritage to facilitate building and maintenance. Despite having been developed right after its missile focused cousin, it is this variant that is considered the default one given that it is less specialized. While the removal of the missile magazines left a lot of internal room, the need for more flux capacitors and more armor quickly filled the void without improving much the cargo capacity or the crew quarters.
+
+ The initial blueprints for both the regular Geryon and the (M) variant had much better active defenses but sims showed an inability to get close of the enemy before the capacitors got overloaded by long range Kinetic barrage. The removal of some defense turrets and the addition of auxiliary engines solved the issue, giving the ships their impressive Hit-and-Run abilities. However that lack of decent defenses means they also are very susceptible to over-extending and getting surrounded.
+
+ Geryons are usually given to experienced captains that have shown a good sense of observation of their ship's surroundings and a strong understanding of the design's limitations. In such hands those ships are able to effectively ignore those shortcomings and hit well above their class weight.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_lamia,SHIP," The first purely military ship design produced after the foundation of the Scyan Navy. It was meant as a test-bed for the doctrines developed by the emerging Fleet Command. Thus this class is somewhat average in all respects, but without blatant weakness either. With her very versatile weapons layout, the Lamia destroyer is often fitted to kill frigates and fighters, but is also capable of engaging larger targets. The wide angle turrets give her both near 360 degree coverage and a strong concentration of frontal fire-power.
+
+ At its core, the Lamia is not very far removed from the civilian freighter they are a modification of. Under the light armor shell, the spinal superstructure is very much the same as before, holding weapon emplacements and ammunition magazines instead of containers. Only the hull material was changed to reduce sensor profile and to withstand more punishment. Perhaps the biggest modification was to move the bridge to the back to a much more protected location. The entirety of its internal components and structure had to be turned backwards but the modular design of the original freighter allowed such change without much of a headache.
+
+ A very efficient division composition is a Geryon together with a Lamia destroyer and a pair of Alecto frigates for cover.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_lamiaA,SHIP," Following the successful design lineage laid out out by the Armored Corocotta, Scyan engineers tried to create a destroyer class that is able to combat conventional heavy destroyers head-on. The Lamia, with its simple and compact design revealed itself quite easy to modify to fit modular armor plates, and the resulting vessel went beyond the expectations of the admiralty. The protection added, albeit rather lightweight, is enough to make a huge difference in its survivability in battle while not taxing the engine enough to prevent it from pursuing ships of similar size classification. Equipped with two Anti-Missile launchers, the armor modules also add a moderate amount of defense to the original design.
+
+ The first purely military ship design produced after the foundation of the Scyan Navy. It was meant as a test-bed for the doctrines developed by the emerging Fleet Command. Thus this class is somewhat average in all respects, but without blatant weakness either. With her very versatile weapons layout, the Lamia destroyer is often fitted to kill frigates and fighters, but is also capable of engaging larger targets. The wide angle turrets give her both near 360 degree coverage and a strong concentration of frontal fire-power.
+
+ At its core, the Lamia is not very far removed from the civilian freighter they are a modification of. Under the light armor shell, the spinal superstructure is very much the same as before, holding weapon emplacements and ammunition magazines instead of containers. Only the hull material was changed to reduce sensor profile and to withstand more punishment. Perhaps the biggest modification was to move the bridge to the back to a much more protected location. The entirety of its internal components and structure had to be turned backwards but the modular design of the original freighter allowed such change without much of a headache.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_argus,SHIP," A common small carrier designed upon a failed heavy weapons platform prototype. The design was too fragile to sustain the recoil from its turrets while using the full thrust of its massive engine. However the large flat weapon platform was perfect to contain a lightweight fighter autofactory and landing pad. The structural weakness has been further alleviated by installing a governor on the engine.
+
+ Equipped with a medium missile launcher, the Argus can be fitted into a decent support ship in addition to the benefits of the flight deck. For self protection, it can even launch a pair of large defense drones, built from standard fighters components directly produced by its repair shop.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_pyraemon,SHIP," The cruiser killer of the Scyan navy, and lightest ship of their fleet able to mount large weapons. The Pyraemon isn't a complex ship by any metric: same chassis as most other Scyan destroyers, a single main offensive emplacement, a few defensive turrets, average performances overall... Only the Stasis Shield system can be considered somewhat fancy. While the single hardpoint severely limit the tactical flexibility of the design, the amount of firepower it bring to the fleet is appreciable.",,,
+,,,,,
+,,,,,
+,,,,,
+# CRUISERS CRUISERS CRUISERS
+,,,,,
+,,,,,
+,,,,,
+SCY_dracanae,SHIP," A very versatile cruiser thanks to its large amount of weapon emplacements with generous arcs. While the blueprint had to be modified several times until the admiralty deemed it combat worthy, this last iteration has been extremely efficiently used by the Scyan Navy.
+
+ The very first cruiser design created by the Scyan Engineering College, before any large class weapons were developed and while the heavy variant of their Aerospike engine design was still in the planning phase. The ship was impractical: despite lacking speed, its high maneuverability gained from the twin engines quickly resulted in structural fatigue. Coupled with the overall lack of long range weaponry available, this ship was easy to outmaneuver and ignore. The admiralty saw the potential of the prototype but also recognized the then lack of expertise in several key area of large ship construction. Being under strict time pressure to create a few cruisers before the next Great Expedition, the prototype was mothballed, the design shelved and the team moved on to help on the emerging Corocotta design. 
+
+ It was during cycle 197 and the pirate crisis that this ship class made a blazing comeback. Reactivated in emergency to face a fleet of rogue mercenaries in the home system while the bulk of the fleet was away, it was this same prototype that dealt most of the damage received by the Dominator-class cruiser. After such a feat, the entire program was quickly resurrected. There has yet to be any major breakthrough in propulsion systems that could alleviate all the issues with the original design, but the generation three class-two engines were a sufficient improvement that the new Dracanae-class was able to keep up with every conventional ship present in the rest of the Sector.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_corocotta,SHIP," Workhorse of the Scyan navy, the Corocotta-class cruiser is an all-around solid ship for their doctrine: good maneuverability and speed, few weapon mounts but with impressive coverage and lightweight armor.
+
+ The design's most prominent feature is the unusual single asymmetric large turret mount. It was a late modification during the production of the first prototypes. The original plan had the turret placed on top of the spinal super-structure, with the bridge placed just behind. On the one hand this severely reduced the visibility from the captain seat, but on the other since most of the battlefield's visualisation is done through a shared network of sensors and cameras from all ships it was not that big of a deal. Additionally having one of the most important areas of the ship hidden behind a large block of metal was not a bad idea either. But a critical issue arose during the full scale firing tests: it was after a couple days of continuous use of the brand new HEMor mark three that the main panoramic viewport suddently cracked along entire width. 
+ 
+  As it turned out, the constant migraines some crew reported was not anodyne, and the continuous recoil stresses produced by the main weapon had dire and far reaching effects. The seven meter fissure leaking air appearing right in front of several officers overseeing the trial was unsurprisingly a great concern in the report, and the engineering team had to crunch a few days to devise a solution. It came in the form offsetting the large turret to starboard while the bridge sat on the other side of the spine across from it. With both those elements having their own sets of inertial dampeners, the stress could no longer be transmitted from one to another. After a few other adjustments to the propulsion system and the cargo areas to maintain the center of mass on the thrust axis, the second prototype successfully passed every stress test without any trouble.
+ 
+ Since then the blueprint has been put on the drawing table countless times to try and improve it; but the only significant modification performed was to move the waste disposal system backwards to avoid the sanitary system from backing up during sharp acceleration maneuvers using the auxiliary thrusters system.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_corocottaA,SHIP," When the development of the Nemean Lion-class Battle Fortress reached the testing stage, it became apparent that it would be unable to operate alone. Instead of designing new ship classes that would yet again increase the cost of maintaining the navy, Scyan Engineers proposed to apply their newly gained expertise in modular heavy armor plating to a standard cruiser. The standard blueprint was adjusted to allow them to mount additional exterior armor plates. The added mass severely diminishes the effective agility of the vessel, but the ship is much more capable of surviving front line combat. Since these ships are not intended to leave Tartarus, the loss of speed has been considered acceptable.
+
+ Workhorse of the Scyan navy, the Corocotta-class cruiser is an all-around solid ship for their doctrine: good maneuverability and speed, few weapon mounts but with impressive coverage and lightweight armor.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_manticore,SHIP," Starting out as a plan to convert the Corocotta chassis into a munition ship. Equipped with an automated missile autofactory it would have increased the autonomy of raiding parties, but it ended up as an entirely new carrier cruiser class instead.
+
+ Since fighters are much larger than missiles, some modifications had to be made both to the assembly line and the main hull section. The primary change to the original blueprint is the significant reduction of the internal storage area to accommodate the docking bays and extended flight deck. Beyond these modifications, the overall flight profile of the carrier version is similar to the original cruiser.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_khalkotauroi,SHIP," Despite massing just above the average cruiser, this class is often labeled a ""capital ship"" to represent its intended role. Built directly on top of the main reactor the truly massive Gamma-ray laser it sports is one of the largest known weapons in existence, and is credible a threat to any class of ship. This weapon can even kill the crew of its target before breaching the hull, or so it is said, but this power comes with a cost.
+
+ First and foremost, it is a fragile weapon: each of the six particle-accelerator pods spread across its hull can be destroyed, reducing the overall power output until rebuilt after the battle. Then it just is an expensive piece of hardware that is expensive to manufacture, maintain and repair.
+
+ For these reasons, the Khalkotauroi-class is equipped with secondary thrusters that allows for quick disengagement and retreat from the battlefield if the combat situation degrades.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_siren,SHIP," Pride of the Scyan Engineering College, this class of ship is a testament to their skill and outside-of-the-box thinking. The main weapon built into its bow can be loaded with various ordnance, including an infamous miniaturized one-shot phase teleporter covered in superconductive magnetic paste. If the shot connects with a hull, the teleporter activates, transporting the ship back to the Siren. Whether it is used to isolate a cruiser from its escort, or to prevent its escape, this one-of-a-kind weapon is an important if niche asset to the Scyan navy. The other standard ammunition type is a high yield EMP/Kinetic charge able to disrupt the systems of its target quickly, even through their shield when at high flux.
+
+ The main drawback of its weapon is the sheer size: A siren cruiser is barely more than a huge weapon welded on top of an even larger engine, the entire ship has to be aimed for long range precision shots. In addition to that, the rest of the armament is comparatively underpowered for its size, and other ships will be required to deal with any enemy caught. Siren cruisers have been known to take on special operations. Namely those aimed to capture high ranking officers together with their ship without leaving a trace of what transpired. To assist with boarding, one of the original cargo bays were hastily replaced by a large shuttle bay also able to maintain and rearm conventional fighters.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_erymanthianboar,SHIP," Designed to work in tandem with Corocotta-class cruisers, the Erymanthian Boar-class ships emulate the Geryon destroyer's role at a larger, more powerful scale. The two frontal missile emplacements are capable of dealing with any enemy cruisers while the sideways launcher fires a fusillade of medium range missiles to deal with lighter threats. The secondary armament however is limited and thus being surrounded is often fatal. The large radar array allows for very early detection of incoming threats and gives an unprecedented visibility on the battlefield.",,,
+,,,,,
+,,,,,
+,,,,,
+# CAPITAL-SHIPS CAPITAL-SHIPS CAPITAL-SHIPS
+,,,,,
+,,,,,
+,,,,,
+SCY_nemeanlion,SHIP," While relying on fast and nimble cruisers for their offensive operations, the Scyan admiralty recognized the need for a true capital ship to defend the home system. Development was extremely costly due to several setbacks and failed prototypes, but the Scyan Engineering College finally gave birth to this Titan of a ship. Almost immune to damage from lighter weapons, equipped with an extremely powerful frontal battery, protected by several autonomous point-defense weapons, it is a behemoth that can even challenge a fully-equipped Paragon and prevail.
+
+ The pirate incident of cycle 197 saw most of the rear guard obliterated during a Great Expedition, leaving Elysee almost undefended for weeks. This event revealed great shortcomings in the Navy's doctrine and ship designs. To remedy these the Scyan Engineering College was commissioned for a durable heavy weapons platform, which turned out to be quite a challenge. While their expertise in stealthy radiation absorbent coatings, high capacity flux-sinks, oversized engines and ultralight alloys is impressive, heavy plating is definitely not their strong suit. The first tests were complete failures, the thickness of plating required to meet the specifications for protection was so much that heavy maintenance became impossible. Furthermore the standard weapon mounts were unable to withstand any form of punishment, leaving wide gaps in the vessel's armor scheme. Seeing this as a developmental dead end, the engineers took a radically different approach and came up with two new concepts to overcome that challenge. 
+
+ Firstly, they greatly reduced the hull component count to increase its cohesion and durability without increasing its thickness too much: the entire front half of the ship is only covered by two huge pieces of composite armor plating! Secondly, they solved the weapon mount problem by assembling these large armored slabs on hydraulic jacks, allowing them to open up and reveal the turrets, or close to protect them. This also solved the heavy maintenance problems since the armor can be removed entirely allowing complete access to the innards of the ship and greatly speeding up repairs. The best part being that these doors run on flux, so they are automatically operated when venting or while the reactor is overloaded.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_keto,SHIP," As all military institutions, the Scyan Navy is always looking for solutions to complete the task for a cheaper price while not endangering its troops more than necessary. To that end, fighters are great assets, but sadly the carriers themselves often lack the proper weapons to support them without deploying other ships. It was exactly that reason that the Keto-class Siege Carrier was developed.
+
+ At its core, the Keto is a compact synchrotron able to accelerate heavy ion particles to relativistic speeds in a matter of seconds. The stream is then condensed and aimed at the target with the superconducting electromagnets housed in the Astrapios. On impact, the charged plasma bolt constituents disrupt shields and disable electronic systems. On the other side of the ship, four large fighter bays are installed to counterbalance the mass.
+
+ The primary drawback is that with all this equipment already fitted to the hull, there is little space for conventional weapon mounts. Still, with the correct fighter complement, this ship alone is capable of completing almost any type of mission, making it a valued asset for the Scyan Navy.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_xanthus,SHIP," When the Scyan Navy started to construct outposts deep in hyperspace, it faced a logistical problem: the nimble Balius freighter was simply unable to haul the largest parts of the stations. It was decided to create a small fleet of special transports, modular to accommodate any cargo, and fast enough to keep up with normal fleets. The result is the Xanthus-class sub-capital freighter. Massing between cruisers and battleships, these cargo transports sacrifice hauling capacity for more speed.
+
+ They are however very expensive, and only few of them have been built. Being as costly to maintain in flight as staying idle in a dock, the Scyan Engineering College was forced to find an efficient manner to minimize the loading and unloading time. They came up with large-scale containers that can hold a whole Balius' worth of cargo. Each Xanthus can carry up to three of these, and exchange them in a matter of minutes if the dockyard crew is well trained. Then the ship can take off to its next destination, and the personnel can take time to unload the containers properly.",,,
+,,,,,
+,,,,,
+,,,,,
+# PLANETS PLANETS PLANETS
+,,,,,
+,,,,,
+,,,,,
+SCY_miningColony,CUSTOM," The second most interesting location for a colony in the star system, this moon lacks any atmosphere and is very close to the Van Allen radiation belt, giving it a much harsher environment than Elysee. However the extreme mineral richness of its crust was too tempting to not exploit it, thus for many cycles now the colony has been mined seasonally.
+
+ During the shift towards piracy of the Scy Nation, this mining outpost has been converted into a prisoner camp for indentured workers. Later on, the workers have been allowed some partial autonomy: the miners would trade their resources for food with Elysee, but other than that, they were to govern themselves with as little Scyan meddling as possible. In addition, after ten cycles of service (five in case of exceptional behavior), they could apply for partial Scyan citizenship and to be transferred to the capital Phoenix.
+
+ This partial citizenship only excluded the right to vote or be elected. To gain full citizenship, they would have to engage themselves in the army. Between daily lives often more comfortable than what they were used to before they were captured, and the assurance to improve it further in the near future, few prisoners rebelled (and every time this occurred they were stopped by their own colleagues who wanted citizenship). The army made sure they received news transmissions from Phoenix to show them what comfort they were working towards.
+
+ After the peace treaty was signed and the military need for new ships was reduced, the workers were released and the facilities switched back to seasonal exploitation. The vast habitats are now used by the military as training grounds and with a reduced crew exploiting the main mine.",,"The nearby Overwatch station transmits a warning that no civilian traffic are authorized to land on the planet. All trading with the mine is to go through the civilian area of the station. At the same time a picket fleet is detected on your sensors as it engages their engine, preventing you from approaching closer.",
+,,,,,
+,,,,,
+,,,,,
+SCY_homePlanet,CUSTOM," The moon chosen by the Keepers to establish the new home of Scy, it is close enough to Tartarus to be inside the Van Allen radiation belt, and large enough to retain an atmosphere. Furthermore, this moon has liquid water in the form of a ring ocean at the equator, kept in perpetual motion by the strong tidal forces from the gas giant.
+
+ Being cloaked by the magnetic field of the gas giant and heated by the geothermic activity caused by its gravity seemed invaluable for the Keepers. On the down side, its natural radioactivity is a bit high, and is often impacted by ice asteroids.",,"A large division of ships maneuvers to block your trajectory. A stern transmission warns you against approaching any closer to Elysee but also directs you toward Hephaistos station if you wish to trade.",
+,,,,,
+,,,,,
+,,,,,
+SCY_star,CUSTOM," The planet Tartarus drew the attention of the scientists of the S.C.o.Y. due to two particularities:
+
+ - Firstly, its wide, eccentric and extremely inclined orbit compared to the rest of the system (79 degrees) suggests it is a rogue planet captured by the main star. With a mass of nearly 18 Jupiters combined, it is possible it originated from a nearby unstable trinary star system and was ejected before reaching critical mass and becoming a star of its own.
+
+ - Secondly, in a (relatively) recent past, the instability provoked by the mass of the new planet, caused the main star to absorb its smaller companion, triggering a luminous red nova. During this event, a debris cloud has been created from the destruction of the previous planets, and was partially captured by Tartarus.
+
+ It also appears that the planet received enough energy from the nova to become partially ignited. While its mass is not significant enough to become a true star, some basic fusion reactions are occurring in its lower atmosphere, giving it a reddish glow on its dark side, thus the name Tartarus. While not very luminous in the visible spectrum and higher, the giant radiates a considerable amount of heat and light in the infrared spectrum. This point particularly interested the astronomers, as they could observe a time accelerated analogue of a cooling white dwarf, and study the complex convection phenomenons occurring in its atmosphere.",,"Radiation and heat alarms light up indicating 'hazardous' mode. While the conditions are far less hostile than being a similar distance to a real star, it is never a good idea to tarry for long under these conditions.",
+,,,,,
+,,,,,
+,,,,,
+SCY_companionStar,PLANET," In a ""recent"" past, the Acheron star suffered a Luminous Nova Event: the arrival of a rogue giant in its binary system upset the delicate ballet of the planets and twin stars. 
+
+ After several increasingly unstable orbits, the twin star approached close enough to its bigger brother and began to get consumed. Once the two merged, it triggered an explosive reaction, burning the surrounding planets to the core and expelling most of its matter into a planetary ring. By that time the rogue planet was almost a light-year away, slowly turning around on its highly elliptical orbit. 
+
+ It was not fortunate enough to remain unscathed though, as the waves of radiation and bombardment from high energy particles partially ignited it again. By the time this giant's orbit brought it near Acheron again, it had morphed into a brown dwarf, and replaced the dead companion star in the binary system.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_burntPlanet,PLANET," The remains of a planet stripped down to its core, when the central star went nova, all interior planets were instantly vaporized. This one was just far enough away to only loose most of its mass. While a sphere of exposed metals would typically be appealing to mine for resources, the fast rotation speed, ground instability and the very high level of radiation make this enterprise rather difficult.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_acid,PLANET," Acid Worlds are rich in common minerals, with heavy deposits of formic, hydrochloric, hydroponic, nitric, phosphoric, and sulphuric acids. They often appear green from space and green and brown when viewed at surface level.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_moon,PLANET," A barren moon. Geologically dead and under constant bombardment by a veritable encyclopedia of different types of solar radiation. The only reason it could potentially be interesting for a colony would be the low gravity, but regardless for obvious reasons remains undesirable.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_redRock,PLANET," A strangely colored planet, most likely due to the extreme density of iron particles and organic compounds in the atmosphere. Despite research being conducted into the atmospheric conditions, it has never been conclusively determined if this planet ever held life at some point in its history. Even if that ever was the case, the nova burned it to a crisp anyways.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_tartarus,PLANET," A rogue giant captured by Acheron before it when nova. Far enough out in its orbit to remain mostly unscathed by the event, except for the amount of energy received that partially transformed it into a brown dwarf. Now slowly burning its hydrogen in the lower levels of the atmosphere, the planet shines an eerie crimson dimmed light and emits intense heat. While far from the activity of a true star, it acts as a miniature star for its hundred of moons.",,,
+,,,,,
+,,,,,
+,,,,,
+# SHIP-SYSTEMS SHIP-SYSTEMS SHIP-SYSTEMS
+,,,,,
+,,,,,
+,,,,,
+SCY_probeDrones,SHIP_SYSTEM,"Launches a long range probe designed to loiter far ahead of the carrier and provide early warning detection. Since they are manufactured from fighter components, they can be built in a standard flight deck autofactory.",Drone,"Deploys a long range probe designed to loiter far ahead of the carrier and provide early warning detection. Can be slowly rebuilt.",
+,,,,,
+,,,,,
+,,,,,
+SCY_ciwsDrones,SHIP_SYSTEM,"Launches a pair of large point-defense drones equipped with a Light Minigun. They depend heavily on the host ship's computers for targeting solutions thus their roaming range is somewhat limited. Since they are manufactured from fighter components, they can be built in a standard flight deck autofactory.",Drone,"Deploys two combat drones equipped with anti-fighter weapons. Roaming range is somewhat limited, but can be slowly rebuilt.",
+,,,,,
+,,,,,
+,,,,,
+SCY_ciwsDrones4,SHIP_SYSTEM,"Launches four large point-defense drones equipped with a Light Minigun. They depend heavily on the host ship's computers for targeting solutions thus their roaming range is somewhat limited. Since they are manufactured from fighter components, they can be built in a standard flight deck autofactory.",Drone,"Deploys four combat drones equipped with anti-fighter weapons. Roaming range is somewhat limited, but can be slowly rebuilt.",
+,,,,,
+,,,,,
+,,,,,
+SCY_miningDrones,SHIP_SYSTEM,"Deploys four mining drones equipped with a basic shield and a Gravitic Hammer. The ""Grav Gun"" is used to repel small asteroids that are at risk of colliding with the host ship, and to fracture larger ones to facilitate ore harvesting.",Drone,"Deploys four mining drones equipped with a basic shield and a Gravitic Hammer. Deals little damage but repels any attacker.",
+,,,,,
+,,,,,
+,,,,,
+SCY_secondaryThrusters,SHIP_SYSTEM,"Activates additional thrusters to increase the speed and acceleration of the ship. Useful to either rapidly close the distance to hostiles, or to gain some breathing room.",Mobility,"Increases speed by 100 su/s, doubles the acceleration but decreases maneuverability by 75%.",
+,,,,,
+,,,,,
+,,,,,
+SCY_engineJumpstart,SHIP_SYSTEM,"Explosive based engine starter that can reignite a flamed out engine. Has a small chance to fail if the engine sustained heavy damage or the ship is at low CR.",Special,"Explosive based engine starter that can reignite a flamed out engine. Has a small chance to fail at low CR.",
+,,,,,
+,,,,,
+,,,,,
+SCY_twinShield,SHIP_SYSTEM,"The Twin Layer Shield concentrate all shields emitters in a narrower arc to greatly increase the efficiency of damage absorption.",Defense,"Halves the shield's arc, but doubles its efficiency and turn rate.",
+,,,,,
+,,,,,
+,,,,,
+SCY_stasisShield,SHIP_SYSTEM,"Provides a short duration boost to the shield emitter: instant deployment and full coverage for a moderate amount of flux generated. The system can only stay active for one second, and then requires some time to recharge the capacitors.",Defense,"Provide an impenetrable stasis bubble for two seconds, shuts down all other systems while active and generate flux.",
+,,,,,
+,,,,,
+,,,,,
+SCY_emp,SHIP_SYSTEM,"Miniaturized EMP emitter with much lower range and duration but faster recharge rate. Used on missiles and fighters.",Weapon Boost,"Miniaturized EMP emitter for emergency situations, with low range and short duration but fast recharge rate.",
+,,,,,
+,,,,,
+,,,,,
+SCY_ping,SHIP_SYSTEM,"Using its frigate sized radar array, the Erymanthian Boar-class cruiser is able to detect hostile signatures in a larger radius than other Scyan vessels. The fragile circuits inside are unable to sustain the massive power required for long before failing so the system is only used for short durations.",Defense,"Massive radar ping reveals a large portion of the surroundings for a short period.",
+,,,,,
+,,,,,
+,,,,,
+SCY_nemeanArmor,SHIP_SYSTEM,"This unique system is unique to the Nemean Lion-class battle fortress allows it to turtle in its armor, augmenting its durability and allowing it to absorb much more punishment. It automatically closes when overloaded or venting, dramatically reducing the exposure of main hull and the weapons to enemy fire.",Defense,"Closes the retractable armor, protecting the main hull and armament from enemy fire. Augments the ability of the armor to soak damage. Deactivates the main weapons, and has a small chance of provoking a weapon malfunction.",
+,,,,,
+,,,,,
+,,,,,
+SCY_experimentalTeleporter,SHIP_SYSTEM,"Extremely cutting edge phase teleporter of unknown origin, able to harness energy from P-space and enhance the ship for a few seconds afterwards.",Mobility,"Extremely advanced phase teleporter, coupled capacitors enhancing the ship's engines for a few seconds. While these are active, they allows for either: Enhanced damage from the main gun, instant shield deployment with extra arc, instant flux venting, a second teleportation.",
+,,,,,
+,,,,,
+,,,,,
+SCY_teleport,SHIP_SYSTEM,"Switches the Siren's Main Gun standard ammunition to a miniature phase teleporter that is able to move the impacted closer to the firing ship, provided the hull itself is hit.",Weapon Boost,"Switches the Siren's Main Gun standard ammunition to a miniature phase teleporter that is able to move the impacted target closer to the firing ship, provided the hull itself is hit.",
+,,,,,
+,,,,,
+,,,,,
+SCY_safeties,SHIP_SYSTEM,"Temporarily disables all weapon safeties and overcharges them. Doubles the fire rate, and reduces the flux required by a quarter but artificially decreases the range to 500su and all weapons have a change of malfunctioning.",Weapon Boost,"Doubles the fire rate of all weapons, cuts their flux usage by a quarter, but clamps their range at 500su and they have a chance of malfunctioning.",
+,,,,,
+,,,,,
+,,,,,
+SCY_targeting,SHIP_SYSTEM,"By networking all targeting computers to concentrate on the same task, the ship is able to greatly increase the accuracy, and therefore the range of either offensive or defensive weapons at the cost of the other's.",Defense,"Allows to trade range between offensive and defensive weapons.",
+,,,,,
+,,,,,
+,,,,,
+# COMMODITY COMMODITY COMMODITY
+,,,,,
+,,,,,
+,,,,,
+SCY_intelChip,RESOURCE,"Heavily encrypted data chip containing valuable intelligence. While notoriously difficult to decipher, no protection scheme can hold forever against enough computer power. These chips are highly valued by any military organization in the Sector regardless of their provenance, either to learn about their neighbors' secrets or to protect their own.",,,
+,,,,,
+,,,,,
+,,,,,
+# MARKETS MARKETS MARKETS
+,,,,,
+,,,,,
+,,,,,
+SCY_hephaistosStation,CUSTOM," The old Cryo-arch Scyans arrived in the Sector with has been cut in half to allow better access to its on-board mini-autofactory. Upon the open wound a large Shipyard rapidly grew.
+
+ Unlike most of the autofactories of the Sector, this tiny model is unable to produce the largest ships components in one piece, and so manual labor by skilled workers is required to assemble the biggest cruisers. Most of the station's volume is occupied by dry-docks, refit bays, ore and fuel refineries...",,"
+
+ A pair of port authority corvettes approaches your ship and asks your intention. Though not quite aggressive, it is obvious that they do not allow stray ships roaming around their most precious station unfettered.",
+,,,,,
+,,,,,
+,,,,,
+SCY_overwatchStation,CUSTOM," This small military station orbits the mining colony once exploited by an enslaved workforce. It feature marines barracks, a sizeable staging area for small craft and a large array of weapons.
+
+ The bright reflective surfaces on some parts of the station are not solar panels, but mirrors meant to make the station visible from the ground, for what was once a reminder of its presence to the slave population. The now decommissioned main laser canon was always ready to fire but has only been used once during the first year of the colony as a warning shot.
+
+ After that, relations have been surprisingly smooth, likely because the army was not present on the ground and the habitats were rather comfortable. Also, while considered as slaves the workers were effectively autonomous and traded the ore they extracted for food and supplies.
+
+ Despite the colony now being exploited by regular Scyan personnel, the station is still the main military structure of the Scyan Navy. The empty habitats and excavated chaotic areas around are now used as training grounds for the marine forces.",,"The port authority directs you towards the civilian docking area of the station, and advises against attempting to observe the military section.",
+,,,,,
+,,,,,
+,,,,,
+SCY_yggdrasillWreckage,CUSTOM," The other half of the Yggdrasill colony after she was bifurcated to gain access to the mini-autofactory, this now useless hulk has been towed away and put in a garage orbit high above Tartarus.
+
+ It has long since been looted clean but the old docking area was not damaged by the controlled explosions. Although it is a tomb, it has immense storage volume, many docking clamps, and is never visited anymore.",,"The automatic docking assist computer remains dead silent, but one of the massive doors of the entrance has already been forced open. A search light reveals intact docking ports though they will have to be operated manually.",
+,,,,,
+,,,,,
+,,,,,
+SCY_refinery,CUSTOM," Orbiting extremely close to Tartarus, the Antimatter refinery only survives the radiation and plasma ejections thanks to its massive shield. There it can capture large quantities of antimatter trapped in the strong magnetic field of the brown dwarf.
+
+ While comparatively very efficient at producing fuel, this facility requires constant repairs to the shield, and a frequent personnel rotation due to the high risks of radiation poisoning and accidents.
+
+ Being so close to the star, navigation is quite dangerous, but the fuel this facility produces is the lifeline of the colony and cannot be obtained elsewhere in the system.",,"Visible to the naked eye from several hundred kilometers away, the shielded station cuts a sharp black silhouette against the bloated glowing clouds of the brown dwarf. The ever changing convection movements begin to hypnotize you when the environmental alarm draws your attention to more pressing matters. The automatic docking procedure is accompanied by lengthy recommendations on radiation protection and a forecast of the next probable plasma flare that could hit the station.",
+,,,,,
+,,,,,
+,,,,,
+SCY_processing,CUSTOM," While spanning several kilometers across, this station is far less dense than is typical for mining stations. This is only possible because it is orbiting in a calm band of the asteroid belt, mostly composed of dust. This facilitates passive collection of ore, and reduces the dangers this type of structure usually faces.
+
+ An expansive docking area allows for the maintaining of a large fleet of mining ships that operate in the thicker areas of the belt. Many workers here are former slaves that decided to distance themselves from the latent xenophobia of the ""true Scyans"". Already being experienced with such work, many find it a relaxing retreat from their days as indentured workers.",,"As your vessel closes in slowly, the station emerges from the ambient smog like a very atypical submarine. You notice that some locals decided to decorate the exterior hull even if their work is barely visible from a distance. Your comm officer's console chimes softly, and you can hear a rather welcoming port regulator assigning you a berth close to the market while wishing you a pleasant visit.",
+,,,,,
+,,,,,
+,,,,,
+SCY_conditioning,CUSTOM," This gloomy station orbits one of the farthest moons from Tartarus. Even the stunning reflection of the star that is visible on the kilometer thick clear ice of the planet is unable shake the feeling of isolation and vulnerability.
+
+ Only a handful of workers monitor the boilers that melts the ice and extracts the precious gasses from it. The personnel rotation is quite rapid to prevent people from getting depressed, but that also isolates each individual even more from their co-workers.",,"The port authority is managed by a class C AI and like every visit, you allow your ship's class B AI to handle the procedure before you lose your temper due to the dumb questions and constant required confirmations.",
+,,,,,
+,,,,,
+,,,,,
+SCY_piratePort,CUSTOM," As the Scy Nation emerged from its isolation, various pirates quickly banded together to occupy this new turf. In a rare act of cooperation they managed to build a station with various unoccupied modules from nearby pirate outposts.
+
+ Sadly for them, the tight control the Scyan Navy maintains in this space prevents the pirates from plundering convoys efficiently. 
+
+ Isolated and lacking the connections to establish traffic routes, the station withered as fast as it grew. It is now only used as a relay for the brave, or desperate, that attempt to reach the small black markets of the periphery stations in Tartarus.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_prismFreeport,CUSTOM," Originally created to facilitate the transfer of war prisoners between the Scy Nation and other parties, Prism Station has been rechristened Prism Freeport and is now a rich, though not very large, independent market. With the proximity of Scy and their extensive intelligence network, Prism is renowned for its info brokers, spy guilds and fake ID sellers.
+
+ But the most interesting part of the station for the Freelancers that like to live on the edge of the law is the Ship and Weapon market. As long as one does not care much about the ""from"" (and has pockets deep enough to afford the huge price markup) it provides a unique selection of high-end items unlikely to be found outside of secured military sellers. 
+
+ Unexpectedly, the station is almost entirely devoid of pirates. As a matter of fact its richness allows it to afford a sizeable private security force to discourage any troublemakers, allowing for an almost utopian social system.",,"A rather sizeable security squadron greets you politely and reminds you that the station will gladly trade with you as long as you respect the ""no personal weapons onboard"" rule.",
+,,,,,
+,,,,,
+,,,,,
+SCY_amityFreeport,CUSTOM," Originally created to facilitate the transfer of war prisoners between the Scy Nation and other parties, Amity Station has been rechristened Amity Freeport and rapidly grew into a rich and successful independent market. With the proximity of Scy and their extensive intelligence network, Amity is renowned for its info brokers, spy guilds and fake ID sellers.
+
+ But the most interesting part of the station for the aspiring Freelancers that wants start venturing among the stars is the Ship and Weapon Fair. As long as one does not care much about the ""from"" and has a somewhat flexible definition of ""barely used"" this market provides a steady supply of rugged hulls of every color and stripes, mostly patched-up from wrecks bought on the cheap, and sold at very affordable prices. 
+
+ Unexpectedly, the station is almost entirely devoid of pirate activity. As a matter of fact the particular services it provides makes it too valuable for even the most wretched pirates to get on the bad side of their sizeable defense force. That is, except when an upstart warlord way in over their head think they can take it for themselves, an endeavor that usually ends as swiftly as it started.",,"A rather sizeable security squadron greets you politely and reminds you that the station will gladly trade with you as long as you respect the ""no personal weapons onboard"" rule.",
+,,,,,
+,,,,,
+,,,,,
+# FACTION FACTION FACTION
+,,,,,
+,,,,,
+,,,,,
+SCY,FACTION," The Scy Nation literally emerged from the ashes of the ""Science Colony of Yggdrasill"". Before the Collapse, the S.C.o.Y. was a nomadic colony built inside an asteroid to travel the stars and study the universe one system at a time. When the Great Collapse occurred and the gate system shutdown the colony became trapped in the Sector, its inhabitants found themselves at the unfortunate center of attention of the Tri-Tachyon Corporation, the Hegemony and the Luddic Church, all eager to get their hands on Yggdrasill's mini-autofactory and its intact pre-collapse UAC library. Using the gigantic ship as a Cryo-arch, two thirds of the population would escape the crossfire while the rest were put to the stake by Ludd fanatics for worshipping the ""demonic autofactory"".
+
+ After a 150 cycle long journey in normal space to avoid detection, the newly founded Scy Nation then tried to build a stable society in a hidden system. Bent on keeping their existence a secret, they created a fleet of stealthy ships to steal what they could not produce locally. These hunts occurred during short periods every few cycles called Great Expeditions. During these events, almost all ships were sent out to plunder trade-lanes, then they would hunker down to rebuild their forces. Unlike regular pirates, they attempted to capture the crew of their prey. Preferring to bring them back as a workforce to exploit the mines feeding the ever hungry military shipyard.
+
+ This lasted a bit less than twenty cycles before they finally were caught. In a desperate attempt to avoid retaliation, they released all their prisoners and played the various factions against each other with all the knowledge they accumulated during their spying days. They are now recognized as a minor but legitimate faction that specializes in intelligence gathering and information brokerage. While not very appreciated by most, they are currently too useful to get on their bad side either.
+
+ The two treasures of the Scy Nation, and the source of their disproportionately strong military force for such a small faction (well, relative strength since they could be wiped in a week should some of the big player decide to do so), are the Hephaistos Shipyard and their unencrypted UACs. The former is the station that has been built upon the wreckage of their Cryo-arch to rapidly produce their ships utilizing its small autofactory. The latter is probably even more precious: Most UACs are read-only and heavily protected. To this day there is no recorded successful attempt to overwrite the content of one of them. But during the exploration days for the Domain of the S.C.o.Y., the University received a few blank ones that could be used to design, produce and modify all their scientific experimentation hardware. While the Scyan Engineering College of today lacks the expertise to produce new Domain-level tech from scratch, they are perfectly able to extract the content of a standard UAC blueprint, modify it to better suit their needs and then write it on one of the open chips. The finite amount of these dictated the need for extremely standardized components and cross compatibility: Every time a new tech emerges, it has to take the place of another one on the production line.",,,
+,,,,,
+,,,,,
+SCY_outpost,CUSTOM,"A formerly hidden military outpost built inside a dillapided station. Now used as a small trading station and embassy for the Scy Nation.",,,,
+,,,,,

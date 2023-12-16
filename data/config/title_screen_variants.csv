@@ -1,0 +1,27 @@
+variant id
+SCY_alecto_combat
+SCY_argus_combat
+SCY_baliusT_auxiliary
+SCY_baliusF_auxiliary
+SCY_centaur_combat
+SCY_corocotta_combat
+SCY_dracanae_combat
+SCY_erymanthianboar_combat
+SCY_geryon_combat
+SCY_pyraemon_combat
+SCY_hydra_combat
+SCY_lamia_combat
+SCY_lealaps_combat
+SCY_manticore_combat
+SCY_megaera_combat
+SCY_siren_combat
+SCY_stymphalianbird_combat
+SCY_talos_combat
+SCY_telchine_standard
+SCY_tisiphone_combat
+SCY_xanthus_standard
+#SCY_corocottaA_assault
+#SCY_khalkotauroi_beamer
+#SCY_keto_combat
+#SCY_nemeanlion_artillery
+#SCY_lamiaA_beamer
