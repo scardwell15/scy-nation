@@ -1,0 +1,18 @@
+{
+  "baseHullId": "SCY_pyraemon",
+  "skinHullId": "SCY_pyraemon_6b",
+  "spriteName": "graphics/SCY/ships/SCY_pyraemon6b.png",
+  "hullName": "Pyraemon-6B",
+  "descriptionId": "SCY_pyraemon_6b",
+  "weaponSlotChanges": {
+    "WS0001": {
+      "type": "BALLISTIC"
+    },
+    "WS0003": {
+      "type": "MISSILE"
+    },
+    "WS0004": {
+      "type": "MISSILE"
+    }
+  }
+}

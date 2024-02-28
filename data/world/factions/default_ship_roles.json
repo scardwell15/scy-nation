@@ -102,12 +102,17 @@
                     "SCY_dracanae_combat": 2,
                     "SCY_dracanae_saturation": 2,
 
-                    "SCY_corocotta_artillery": 1,
-                    "SCY_corocotta_beamer": 2,
-                    "SCY_corocotta_combat": 2,
-                    "SCY_corocotta_energy": 2,
-                    "SCY_corocotta_escort": 2,
-                    "SCY_corocotta_pestControl": 1,
+                    "SCY_corocotta_artillery": 0.5,
+                    "SCY_corocotta_beamer": 1,
+                    "SCY_corocotta_combat": 1,
+                    "SCY_corocotta_energy": 1,
+                    "SCY_corocotta_escort": 1,
+                    "SCY_corocotta_pestControl": 0.5,
+
+                    "SCY_corocotta_2l_Assault": 1,
+                    "SCY_corocotta_2l_Close_Support": 1,
+                    "SCY_corocotta_2l_Escort": 0.5,
+                    "SCY_corocotta_2l_Combat": 1,
 
                     "SCY_corocottaA_assault": 2,
                     "SCY_corocottaA_beamer": 2,

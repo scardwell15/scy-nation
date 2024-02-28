@@ -664,6 +664,10 @@ SCY_pyraemon,SHIP," The cruiser killer of the Scyan navy, and lightest ship of t
 ,,,,,
 ,,,,,
 ,,,,,
+SCY_pyraemon_6b,SHIP," The cruiser killer of the Scyan navy, and lightest ship of their fleet able to mount large weapons. The Pyraemon isn't a complex ship by any metric: same chassis as most other Scyan destroyers, a single main offensive emplacement, a few defensive turrets, average performances overall... Only the Stasis Shield system can be considered somewhat fancy. This variant has refitted two defensive turrets to be capable of fitting missile weapons, but the large hardpoint has been restricted to ballistic weaponry.",,,
+,,,,,
+,,,,,
+,,,,,
 # CRUISERS CRUISERS CRUISERS
 ,,,,,
 ,,,,,
@@ -689,6 +693,16 @@ SCY_corocotta,SHIP," Workhorse of the Scyan navy, the Corocotta-class cruiser is
 SCY_corocottaA,SHIP," When the development of the Nemean Lion-class Battle Fortress reached the testing stage, it became apparent that it would be unable to operate alone. Instead of designing new ship classes that would yet again increase the cost of maintaining the navy, Scyan Engineers proposed to apply their newly gained expertise in modular heavy armor plating to a standard cruiser. The standard blueprint was adjusted to allow them to mount additional exterior armor plates. The added mass severely diminishes the effective agility of the vessel, but the ship is much more capable of surviving front line combat. Since these ships are not intended to leave Tartarus, the loss of speed has been considered acceptable.
 
  Workhorse of the Scyan navy, the Corocotta-class cruiser is an all-around solid ship for their doctrine: good maneuverability and speed, few weapon mounts but with impressive coverage and lightweight armor.",,,
+,,,,,
+,,,,,
+,,,,,
+SCY_corocotta_2l,SHIP," Workhorse of the Scyan navy, the Corocotta-class cruiser is an all-around solid ship for their doctrine: good maneuverability and speed, few weapon mounts but with impressive coverage and lightweight armor.
+
+ The design's most prominent feature is the unusual single asymmetric large turret mount. It was a late modification during the production of the first prototypes. The original plan had the turret placed on top of the spinal super-structure, with the bridge placed just behind. On the one hand this severely reduced the visibility from the captain seat, but on the other since most of the battlefield's visualisation is done through a shared network of sensors and cameras from all ships it was not that big of a deal. Additionally having one of the most important areas of the ship hidden behind a large block of metal was not a bad idea either. But a critical issue arose during the full scale firing tests: it was after a couple days of continuous use of the brand new HEMor mark three that the main panoramic viewport suddently cracked along entire width.
+
+  As it turned out, the constant migraines some crew reported was not anodyne, and the continuous recoil stresses produced by the main weapon had dire and far reaching effects. The seven meter fissure leaking air appearing right in front of several officers overseeing the trial was unsurprisingly a great concern in the report, and the engineering team had to crunch a few days to devise a solution. It came in the form offsetting the large turret to starboard while the bridge sat on the other side of the spine across from it. With both those elements having their own sets of inertial dampeners, the stress could no longer be transmitted from one to another. After a few other adjustments to the propulsion system and the cargo areas to maintain the center of mass on the thrust axis, the second prototype successfully passed every stress test without any trouble.
+
+ Since then the blueprint has been put on the drawing table countless times to try and improve it; this is one such design, featuring a large missile mount and locking the two forward medium mounts to energy weapons.",,,
 ,,,,,
 ,,,,,
 ,,,,,

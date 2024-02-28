@@ -62,7 +62,7 @@ Ricochet Gun,SCY_ricochet,2,0.5,7500,900,,600,,20,5,20,4,0.5,,HIGH_EXPLOSIVE,800
 Laser Torpedo Pod,SCY_laser3,2,,5000,2000,,2000,1000,0,7,24,15,,,ENERGY,,,,6,,,,,,,,250,100,16,400,,,"DO_NOT_AIM,STRIKE","strike14, missile18, scy_wep_bp",,Scyan Engineering,,General,,,,,%s Detonates at range and generates a spray of beams.,Laser warhead:,Direct impact detonations only deal half its rated damage potential.,,,
 Heavy Modular Swarmer,SCY_swarmer,2,,4000,1500,,75,75,10,5,18,600,,,ENERGY,30,,,10,30,0.1,,,,,,300,50,10,30,,,"DO_NOT_AIM,DO_NOT_CONSERVE,ANTI_FTR","utility16, missile16, scy_wep_bp",,Scyan Engineering,,Fighter Suppression,,,,,,,,,,
 Singularity Torpedo Launcher,SCY_singularity,3,0.2,7000,4000,,2000,2000,75,10,23,15,,,ENERGY,,,,20,,,,,,,,300,50,16,300,,,"DO_NOT_AIM,STRIKE","utility16, missile15, rare_bp",,Scyan Engineering,,Special,,,,,%s Creates a temporary singularity that pulls all nearby entities on impact.,Singularity warhead:,,,,
-Phased Missile Launcher,SCY_phased,3,0.4,6000,5000,,2000,,20,5,25,15,,,HIGH_EXPLOSIVE,1000,,,8,,,,,,,,300,15,20,200,,,"DO_NOT_AIM","utility17, missile16, scy_wep_bp",,Scyan Engineering,,Torpedo,,,,,"%s Phased for most of the distance, deploys a mine when close to the target. ",Phased missile:,,,,
+Phased Missile Launcher,SCY_phased,3,0.4,6000,5000,,2000,,20,5,25,15,,,HIGH_EXPLOSIVE,1000,,,8,,,,,,,,300,15,20,200,,,"DO_NOT_AIM,STRIKE","utility17, missile16, scy_wep_bp",,Scyan Engineering,,Torpedo,,,,,"%s Phased for most of the distance, deploys a mine when close to the target. ",Phased missile:,,,,
 ,SCY_phase_mine,0,,200000,1000,,2000,,,,,,,,HIGH_EXPLOSIVE,0,,,,,,0,0,0,0,,100,0,15,500,,,SYSTEM,,,,,,,,,,,,,,,38.5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

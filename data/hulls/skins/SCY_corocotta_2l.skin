@@ -1,0 +1,24 @@
+{
+  "baseHullId": "SCY_corocotta",
+  "skinHullId": "SCY_corocotta_2l",
+  "spriteName": "graphics/SCY/ships/SCY_corocotta2l.png",
+  "hullName": "Corocotta-2L",
+  "descriptionId": "SCY_corocotta_2l",
+  "weaponSlotChanges": {
+    "WS0001": {
+      "type": "MISSILE"
+    },
+    "WS0003": {
+      "type": "ENERGY"
+    },
+    "WS0002": {
+      "type": "ENERGY"
+    },
+    "WS0004": {
+      "type": "HYBRID"
+    },
+    "WS0005": {
+      "type": "HYBRID"
+    }
+  }
+}

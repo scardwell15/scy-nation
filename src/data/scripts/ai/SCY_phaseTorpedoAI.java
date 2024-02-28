@@ -164,6 +164,13 @@ public class SCY_phaseTorpedoAI implements MissileAIPlugin, GuidedMissileAI {
 
       // mine trigger
       if (MathUtils.isWithinRange(target, MISSILE, DETONATION_RANGE * ECCM / 3)) {
+        boolean hadStrike = MISSILE.getWeapon().hasAIHint(WeaponAPI.AIHints.STRIKE);
+        MISSILE.getWeapon().ensureClonedSpec();
+
+        if (hadStrike) {
+          MISSILE.getWeapon().getSpec().getAIHints().remove(WeaponAPI.AIHints.STRIKE);
+        }
+        
         engine.spawnProjectile(
             MISSILE.getSource(),
             MISSILE.getWeapon(),
@@ -171,6 +178,10 @@ public class SCY_phaseTorpedoAI implements MissileAIPlugin, GuidedMissileAI {
             MISSILE.getLocation(),
             MISSILE.getFacing(),
             new Vector2f(MISSILE.getVelocity()));
+
+        if (hadStrike) {
+          MISSILE.getWeapon().getSpec().getAIHints().add(WeaponAPI.AIHints.STRIKE);
+        }
         engine.addHitParticle(
             MISSILE.getLocation(), MISSILE.getVelocity(), 50, 0.5f, 0.25f, Color.PINK);
         engine.addHitParticle(

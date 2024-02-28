@@ -1,0 +1,51 @@
+{
+    "displayName": "Close Support",
+    "fluxCapacitors": 4,
+    "fluxVents": 30,
+    "goalVariant": true,
+    "hullId": "SCY_corocotta_2l",
+    "hullMods": [
+        "targetingunit",
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "suppressedMods": [],
+    "variantId": "SCY_corocotta_2l_Close_Support",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "SCY_kacc1",
+                "WS0005": "SCY_kacc1",
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "SCY_laser3",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "SCY_lvds",
+                "WS0002": "SCY_lvds",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "pdlaser",
+                "WS0009": "pdlaser",
+                "WS0006": "SCY_kacc1",
+                "WS0007": "SCY_kacc1",
+            }
+        },
+    ],
+    "wings": [],
+    "modules": [],
+}
