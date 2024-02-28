@@ -9,18 +9,15 @@ import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.campaign.CoreUIAPI;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.RepLevel;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.submarkets.BaseSubmarketPlugin;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
-import org.magiclib.util.MagicSettings;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.apache.log4j.Logger;
 import org.lazywizard.lazylib.MathUtils;
+import org.magiclib.util.MagicSettings;
 
 public class SCY_amityDealer extends BaseSubmarketPlugin {
 
@@ -34,16 +31,6 @@ public class SCY_amityDealer extends BaseSubmarketPlugin {
 
   private List<String> ALLOWED_FACTIONS = new ArrayList<>();
   private List<String> DISALLOWED_STUFF = new ArrayList<>();
-
-  private final Map<HullSize, Integer> MAX_FP = new HashMap<>();
-
-  {
-    MAX_FP.put(HullSize.DEFAULT, 50);
-    MAX_FP.put(HullSize.FRIGATE, 6);
-    MAX_FP.put(HullSize.DESTROYER, 10);
-    MAX_FP.put(HullSize.CRUISER, 15);
-    MAX_FP.put(HullSize.CAPITAL_SHIP, 24);
-  }
 
   private void getSettings() {
     MAX_WEAPONS = MagicSettings.getInteger("SCY", "amity_maxWeaponStacks");
@@ -99,8 +86,8 @@ public class SCY_amityDealer extends BaseSubmarketPlugin {
     for (float i = 0f; i < variation; i = (float) cargo.getStacksCopy().size()) {
 
       // add some weapons and fighters (at the same time to save cycles and ensure a good mix)
-      addWeapons(5, 10, 2, factionPicker.pick());
-      addFighters(2, 5, 2, factionPicker.pick());
+      addWeapons(5, MathUtils.getRandomNumberInRange(10, 20), MathUtils.getRandomNumberInRange(2, 3), factionPicker.pick());
+      addFighters(2, MathUtils.getRandomNumberInRange(5, 8), MathUtils.getRandomNumberInRange(2, 3), factionPicker.pick());
 
       // check for invalid stuff
       List<CargoStackAPI> toRemove = new ArrayList<>();
@@ -165,142 +152,82 @@ public class SCY_amityDealer extends BaseSubmarketPlugin {
       }
     }
 
-    if (verbose) {
-      // add lots of new hulls
-      for (int i = 0; i < 20; i++) {
+    // same thing but non verbose
+    for (int i = 0; i < 10; i++) {
+      FactionAPI faction = Global.getSector().getFaction(factionPicker.pick());
+      log.debug("Picking ship from " + faction.getId());
 
-        FactionAPI faction = Global.getSector().getFaction(factionPicker.pick());
+      addShips(
+          faction.getId(),
+          MathUtils.getRandomNumberInRange(100, 200),
+          15,
+          15,
+          15,
+          15,
+          15,
+          0.3f,
+          0.3f,
+          FactionAPI.ShipPickMode.PRIORITY_THEN_ALL,
+          faction.getDoctrine());
+    }
 
-        log.info("Picking ship from " + faction.getId());
-        addShips(
-            faction.getId(),
-            MathUtils.getRandomNumberInRange(50, 150),
-            0.5f,
-            0.1f,
-            0.1f,
-            0.1f,
-            0.1f,
-            0.3f,
-            0.3f,
-            FactionAPI.ShipPickMode.ALL,
-            //                        null
-            faction.getDoctrine());
-      }
+    for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
+      if (DISALLOWED_STUFF.contains(m.getHullSpec().getBaseHullId()))
+        cargo.getMothballedShips().removeFleetMember(m);
+    }
 
-      log.info("Checking for blacklist");
-      // remove blacklisted ships
-      for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-        if (DISALLOWED_STUFF.contains(m.getHullSpec().getBaseHullId())) {
-          cargo.getMothballedShips().removeFleetMember(m);
-          log.info("Removing blacklisted " + m.getHullId());
-        }
-      }
-      log.info(
-          "Allowed ships remaining: " + cargo.getMothballedShips().getMembersListCopy().size());
+    log.debug("Allowed ships remaining: " + cargo.getMothballedShips().getMembersListCopy().size());
 
-      log.info("Checking for high grade");
-      // remove high grade ships
-      for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-        if (keep.contains(m)) continue; // skip prevalidated hulls
-        if (m.getHullSpec().getFleetPoints() > MAX_FP.get(m.getHullSpec().getHullSize())) {
-          cargo.getMothballedShips().removeFleetMember(m);
-          log.info("Removing high FP " + m.getHullId());
-        }
-      }
-      log.info(
-          "Remaining ships after FP pruning: "
-              + cargo.getMothballedShips().getMembersListCopy().size());
-
-      log.info("Checking for no or too many Dmods");
-      // remove hulls with no D-mod or more than 2
-      for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-        if (keep.contains(m)) continue; // skip prevalidated hulls
-        if (!m.getVariant().getHullMods().isEmpty()) {
-          int dmods = 0;
-          for (String h : m.getVariant().getHullMods()) {
-            if (Global.getSettings().getHullModSpec(h).hasTag("dmod")) {
-              dmods++;
-            }
-          }
-          if (dmods > 2 || dmods == 0) {
-            cargo.getMothballedShips().removeFleetMember(m);
-            log.info("Removing " + dmods + " D-mod " + m.getHullId());
-          }
-        } else {
-          cargo.getMothballedShips().removeFleetMember(m);
-          log.info("Removing 0 D-mod " + m.getHullId());
-        }
-      }
-      log.info(
-          "Remaining ships after dmod pruning: "
-              + cargo.getMothballedShips().getMembersListCopy().size());
-
-      log.info("Checking for too many ships remaining");
-      // if too many are left, remove random ships
-      if (cargo.getMothballedShips().getMembersListCopy().size() > MAX_SHIPS) {
-        float threshold = ((float) MAX_SHIPS) / cargo.getMothballedShips().getMembersListCopy().size();
-
-        for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-          if (keep.contains(m)) continue; // skip prevalidated hulls
-          if (Math.random() > threshold) {
-            cargo.getMothballedShips().removeFleetMember(m);
-            log.info("Removing randomly " + m.getHullId());
-          }
-          if (cargo.getMothballedShips().getMembersListCopy().size() < MAX_SHIPS) {
-            break;
+    // remove hulls with no D-mod or more than 2
+    for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
+      if (keep.contains(m)) continue; // skip prevalidated hulls
+      if (!m.getVariant().getHullMods().isEmpty()) {
+        int dmods = 0;
+        for (String h : m.getVariant().getHullMods()) {
+          if (Global.getSettings().getHullModSpec(h).hasTag("dmod")) {
+            dmods++;
           }
         }
-      }
-      log.info(
-          "Remaining ships after random pruning: "
-              + cargo.getMothballedShips().getMembersListCopy().size()
-              + "\n"
-              + cargo.getMothballedShips().getMembersListCopy());
-    } else {
-      // same thing but non verbose
-      for (int i = 0; i < 10; i++) {
-        FactionAPI faction = Global.getSector().getFaction(factionPicker.pick());
-        addShips(
-            faction.getId(),
-            100,
-            50,
-            10,
-            10,
-            10,
-            10,
-            0.3f,
-            0.3f,
-            FactionAPI.ShipPickMode.PRIORITY_ONLY,
-            faction.getDoctrine());
-      }
-      for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-        if (DISALLOWED_STUFF.contains(m.getHullSpec().getBaseHullId()))
+        if (dmods > 2 || dmods == 0) {
           cargo.getMothballedShips().removeFleetMember(m);
-      }
-      for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-        if (keep.contains(m)) continue;
-        if (m.getHullSpec().getFleetPoints() > MAX_FP.get(m.getHullSpec().getHullSize()))
-          cargo.getMothballedShips().removeFleetMember(m);
-      }
-      for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-        if (keep.contains(m)) continue;
-        if (!m.getVariant().getHullMods().isEmpty()) {
-          int dmods = 0;
-          for (String h : m.getVariant().getHullMods()) {
-            if (Global.getSettings().getHullModSpec(h).hasTag("dmod")) dmods++;
-          }
-          if (dmods > 2 || dmods == 0) cargo.getMothballedShips().removeFleetMember(m);
-        } else cargo.getMothballedShips().removeFleetMember(m);
-      }
-      if (cargo.getMothballedShips().getMembersListCopy().size() > MAX_SHIPS) {
-        float threshold = ((float) MAX_SHIPS) / cargo.getMothballedShips().getMembersListCopy().size();
-        for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
-          if (keep.contains(m)) continue;
-          if (Math.random() > threshold) cargo.getMothballedShips().removeFleetMember(m);
-          if (cargo.getMothballedShips().getMembersListCopy().size() < MAX_SHIPS) break;
+          log.debug("Removing " + dmods + " D-mod " + m.getHullId());
         }
+      } else {
+        cargo.getMothballedShips().removeFleetMember(m);
+        log.debug("Removing 0 D-mod " + m.getHullId());
       }
     }
+
+    log.debug(
+        "Remaining ships after dmod pruning: "
+            + cargo.getMothballedShips().getMembersListCopy().size());
+
+    if (cargo.getMothballedShips().getMembersListCopy().size() > MAX_SHIPS) {
+      log.debug(
+          "Randomly pruning "
+              + (cargo.getMothballedShips().getMembersListCopy().size() - MAX_SHIPS)
+              + " ships");
+
+      float threshold =
+          ((float) MAX_SHIPS) / cargo.getMothballedShips().getMembersListCopy().size();
+      for (FleetMemberAPI m : cargo.getMothballedShips().getMembersListCopy()) {
+        if (keep.contains(m)) continue;
+
+        if (Math.random() > threshold) {
+          cargo.getMothballedShips().removeFleetMember(m);
+          log.debug("Removing randomly " + m.getHullId());
+        }
+
+        if (cargo.getMothballedShips().getMembersListCopy().size() < MAX_SHIPS) break;
+      }
+    }
+
+    log.debug(
+        "Remaining ships after random pruning: "
+            + cargo.getMothballedShips().getMembersListCopy().size()
+            + "\n"
+            + cargo.getMothballedShips().getMembersListCopy());
+
     // cleanup and done!
     cargo.sort();
     sinceLastCargoUpdate = 0f;
