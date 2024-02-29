@@ -5,7 +5,6 @@ import com.fs.starfarer.api.GameState
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin
 import com.fs.starfarer.api.combat.ShipAPI
-import com.fs.starfarer.api.combat.ViewportAPI
 import com.fs.starfarer.api.input.InputEventAPI
 import com.fs.starfarer.api.util.Misc
 import exerelin.utilities.ReflectionUtils
@@ -20,11 +19,6 @@ import kotlin.math.pow
 
 
 class SCY_ArmorPaperdollsPlugin : BaseEveryFrameCombatPlugin() {
-    override fun renderInUICoords(viewport: ViewportAPI?) {
-        super.renderInUICoords(viewport)
-        if (viewport == null) return
-
-    }
     override fun advance(amount: Float, events: MutableList<InputEventAPI>?) {
         super.advance(amount, events)
         if (Global.getCurrentState() != GameState.COMBAT) return
@@ -48,9 +42,9 @@ class SCY_ArmorPaperdollsPlugin : BaseEveryFrameCombatPlugin() {
 
         // draw paperdoll for armor
         val center = Vector2f(120f, 120f) //TODO: make sure this doesn't change across ui scales
-        MagicUI.openGL11ForText()
+        MagicUI.openGLForMiscWithinViewport()
         drawPaperdoll(ship, center, 1f)
-        MagicUI.closeGL11ForText()
+        MagicUI.closeGLForMiscWithinViewport()
     }
 
     //TODO: Hardcoded bullshit, no clue how alex scales sprites here.
@@ -66,7 +60,7 @@ class SCY_ArmorPaperdollsPlugin : BaseEveryFrameCombatPlugin() {
 
         if (PAPERDOLL_SCALE.containsKey(ship.hullSpec.baseHullId)) {
             var shipScale = PAPERDOLL_SCALE[ship.hullSpec.baseHullId]!! * scale;
-            val alpha = Math.round(Misc.interpolate(0f, 255f, getUIAlpha(false))*0.7f)
+            val alpha = Math.round(Misc.interpolate(0f, 170f, getUIAlpha(false)))
             for (module in ship.childModulesCopy) {
                 if (module.hitpoints <= 0f) continue
 

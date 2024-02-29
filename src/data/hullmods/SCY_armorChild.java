@@ -23,6 +23,11 @@ public class SCY_armorChild extends BaseHullMod {
   }
 
   @Override
+  public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+    if(!ship.hasListenerOfClass(SCY_modularArmor.ExplosionOcclusionRaycast.class)) ship.addListener(new SCY_modularArmor.ExplosionOcclusionRaycast());
+  }
+
+  @Override
   public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
     return null;
   }
