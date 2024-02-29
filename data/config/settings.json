@@ -2,6 +2,7 @@
     "plugins":{
         "SCY_projectilesEffectPlugin":"data.scripts.plugins.SCY_projectilesEffectPlugin",
         "SCY_muzzleFlashesPlugin":"data.scripts.plugins.SCY_muzzleFlashesPlugin",
+        "SCY_ArmorPaperdollsPlugin": "data.scripts.plugins.SCY_ArmorPaperdollsPlugin"
     },
 
     "designTypeColors":{
@@ -183,5 +184,27 @@
             "SCY_kacc2HM_10":"graphics/SCY/weapons/muzzles/SCY_kacc2HM_10.png",
             "SCY_kacc2HM_11":"graphics/SCY/weapons/muzzles/SCY_kacc2HM_11.png",
         },
+        "paperdolls": {
+            "SCY_lamiaAF" : "graphics/SCY/ships/paperdolls/SCY_lamiaAF_paperdoll.png",
+            "SCY_lamiaAL" : "graphics/SCY/ships/paperdolls/SCY_lamiaAL_paperdoll.png",
+            "SCY_lamiaAR" : "graphics/SCY/ships/paperdolls/SCY_lamiaAR_paperdoll.png",
+            "SCY_khalkPA" : "graphics/SCY/ships/paperdolls/SCY_khalkotauroi_podA_paperdoll.png",
+            "SCY_khalkPB" : "graphics/SCY/ships/paperdolls/SCY_khalkotauroi_podB_paperdoll.png",
+            "SCY_khalkPC" : "graphics/SCY/ships/paperdolls/SCY_khalkotauroi_podC_paperdoll.png",
+            "SCY_khalkPD" : "graphics/SCY/ships/paperdolls/SCY_khalkotauroi_podD_paperdoll.png",
+            "SCY_khalkPE" : "graphics/SCY/ships/paperdolls/SCY_khalkotauroi_podE_paperdoll.png",
+            "SCY_khalkPF" : "graphics/SCY/ships/paperdolls/SCY_khalkotauroi_podF_paperdoll.png",
+            "SCY_corAF" : "graphics/SCY/ships/paperdolls/SCY_corocottaA_armorFront_paperdoll.png",
+            "SCY_corAFL" : "graphics/SCY/ships/paperdolls/SCY_corocottaA_armorFrontLeft_paperdoll.png",
+            "SCY_corAFR" : "graphics/SCY/ships/paperdolls/SCY_corocottaA_armorFrontRight_paperdoll.png",
+            "SCY_corAL" : "graphics/SCY/ships/paperdolls/SCY_corocottaA_armorLeft_paperdoll.png",
+            "SCY_corAR" : "graphics/SCY/ships/paperdolls/SCY_corocottaA_armorRight_paperdoll.png",
+            "SCY_lionFL" : "graphics/SCY/ships/paperdolls/SCY_nemeanLion_armorFrontLeft_01_paperdoll.png",
+            "SCY_lionFR" : "graphics/SCY/ships/paperdolls/SCY_nemeanLion_armorFrontRight_01_paperdoll.png",
+            "SCY_lionRL" : "graphics/SCY/ships/paperdolls/SCY_nemeanLion_armorRearLeft_01_paperdoll.png",
+            "SCY_lionRR" : "graphics/SCY/ships/paperdolls/SCY_nemeanLion_armorRearRight_01_paperdoll.png",
+            "SCY_ketoAL" : "graphics/SCY/ships/paperdolls/SCY_keto_gun_paperdoll.png",
+            "SCY_ketoAR" : "graphics/SCY/ships/paperdolls/SCY_keto_flightdeck_paperdoll.png"
+        }
     }
 }

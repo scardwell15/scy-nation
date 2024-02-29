@@ -282,9 +282,9 @@ public class SCY_lionAnimation implements EveryFrameWeaponEffectPlugin {
   }
 
   private void applyWeaponLock(ShipAPI ship) {
-    ship.getMutableStats().getBallisticWeaponFluxCostMod().modifyFlat(ID, 100000);
-    ship.getMutableStats().getEnergyWeaponFluxCostMod().modifyFlat(ID, 100000);
-    ship.getMutableStats().getMissileWeaponFluxCostMod().modifyFlat(ID, 100000);
+    ship.getMutableStats().getBallisticWeaponFluxCostMod().modifyFlat(ID, 10000000);
+    ship.getMutableStats().getEnergyWeaponFluxCostMod().modifyFlat(ID, 10000000);
+    ship.getMutableStats().getMissileWeaponFluxCostMod().modifyFlat(ID, 10000000);
   }
 
   private void unapplyWeaponLock(ShipAPI ship) {

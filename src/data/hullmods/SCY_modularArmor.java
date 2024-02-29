@@ -3,18 +3,33 @@ package data.hullmods;
 import static data.scripts.util.SCY_txt.txt;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
+import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.util.Pair;
+import com.fs.starfarer.combat.entities.DamagingExplosion;
+import org.lazywizard.lazylib.CollisionUtils;
+import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.combat.DefenseUtils;
+import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicIncompatibleHullmods;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class SCY_modularArmor extends BaseHullMod {
 
   private final String SCY_ARMOR_MOD = "SCY_ARMOR_MOD";
   private final float SPEED_BONUS = 0.25f;
+
+  @Override
+  public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+    if(!ship.hasListenerOfClass(SCY_engineering.ExplosionOcclusionRaycast.class)) ship.addListener(new SCY_engineering.ExplosionOcclusionRaycast());
+  }
 
   @Override
   public void advanceInCombat(ShipAPI ship, float amount) {

@@ -95,11 +95,12 @@ public class SCY_ketoMainEffect implements EveryFrameWeaponEffectPlugin, OnFireE
       warmup = -1f;
       if (wCharge == 0) {
         hasFired = false;
+        sound = false;
       }
     } else if (!LDEATH
         && !SHIP.getFluxTracker().isOverloadedOrVenting()
         && !SHIP.getTravelDrive().isActive()
-        && ASTRAPIOS.getCooldownRemaining() == 0) {
+        && ASTRAPIOS.getCooldownRemaining() == 0.0f) {
       // weapon warms-up if the ship isn't overloaded, venting, travelling in and out and if the
       // weapon is ready to fire
       warmup = Math.min(1, warmup + amount / 5);
@@ -181,11 +182,12 @@ public class SCY_ketoMainEffect implements EveryFrameWeaponEffectPlugin, OnFireE
   }
 
   private void dot(float warmth, float charge, float amount) {
-    if (warmth <= 0 || charge <= 0) {
+    if (warmth <= 0) {
       DOT.getAnimation().setFrame(0);
+      DOT.setCurrAngle(SHIP.getFacing());
     } else {
       int frame = Math.round(Math.min(1, warmth) * (DOT.getAnimation().getNumFrames() - 1));
-      float color = Math.max(0.0f, Math.min(warmth * 4.0f, 1.0f));
+      float color = Math.max(0.0f, Math.min(warmth * 2.0f, 1.0f));
       DOT.getAnimation().setFrame(frame);
       DOT.getSprite().setColor(new Color(1.0f, color, color, color));
       float smooth = (float) -FastTrig.cos(warmth * MathUtils.FPI / 2) + 1;

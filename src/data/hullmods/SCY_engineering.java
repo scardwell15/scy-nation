@@ -5,21 +5,23 @@ import static data.scripts.util.SCY_txt.txt;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.PersonalityAPI;
-import com.fs.starfarer.api.combat.BaseHullMod;
+import com.fs.starfarer.api.combat.*;
 // import com.fs.starfarer.api.impl.campaign.ids.Stats;
-import com.fs.starfarer.api.combat.MissileAPI;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.ShipCommand;
-import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.util.Pair;
+import com.fs.starfarer.combat.entities.DamagingExplosion;
+import org.lazywizard.lazylib.CollisionUtils;
+import org.lazywizard.lazylib.combat.DefenseUtils;
+import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicIncompatibleHullmods;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
+
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 
@@ -59,6 +61,224 @@ public class SCY_engineering extends BaseHullMod {
         MagicIncompatibleHullmods.removeHullmodWithWarning(
             ship.getVariant(), tmp, "SCY_engineering");
       }
+    }
+
+    if(!ship.hasListenerOfClass(ExplosionOcclusionRaycast.class)) ship.addListener(new ExplosionOcclusionRaycast());
+  }
+
+  public static class ExplosionOcclusionRaycast implements DamageTakenModifier {
+    public static final int NUM_RAYCASTS = 36;
+    public static final String RAYCAST_KEY = "kol_module_explosion_raycast";
+    @Override
+    public String modifyDamageTaken(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
+      ShipAPI ship = (ShipAPI) target;
+      ShipAPI parent = ship.getParentStation() == null ? ship : ship.getParentStation();
+
+      if (param instanceof DamagingExplosion || param instanceof MissileAPI) {
+        DamagingProjectileAPI projectile = (DamagingProjectileAPI) param;
+
+
+        HashMap<DamagingProjectileAPI, HashMap<String, Float>> explosionMap = (HashMap<DamagingProjectileAPI, HashMap<String, Float>>) parent.getCustomData().get(RAYCAST_KEY);
+
+        // if this is the explosion from the missile, look up the cached result and use that
+        if(projectile instanceof DamagingExplosion && explosionMap != null){
+          for(DamagingProjectileAPI pastProjectile : explosionMap.keySet()){
+            if (pastProjectile instanceof MissileAPI && pastProjectile.getSource() == projectile.getSource() &&
+                    MathUtils.getDistanceSquared(pastProjectile.getLocation(), projectile.getSpawnLocation()) < 1f){
+              projectile = pastProjectile;
+              break;
+            }
+          }
+        }
+
+        generateExplosionRayhitMap(projectile, damage, parent);
+        explosionMap = (HashMap<DamagingProjectileAPI, HashMap<String, Float>>) parent.getCustomData().get(RAYCAST_KEY);
+
+        damage.getModifier().modifyMult(this.getClass().getName(), explosionMap.get(projectile).get(ship.getId()));
+
+        return this.getClass().getName();
+      }
+      return null;
+    }
+
+    public void generateExplosionRayhitMap(DamagingProjectileAPI projectile, DamageAPI damage, ShipAPI parent){
+
+      if(!parent.getCustomData().containsKey(RAYCAST_KEY) || !(parent.getCustomData().get(RAYCAST_KEY) instanceof HashMap)){
+        parent.setCustomData(RAYCAST_KEY, new HashMap<DamagingProjectileAPI, HashMap<String, Float>>());
+      }
+      HashMap<DamagingProjectileAPI, HashMap<String, Float>> explosionMap = (HashMap<DamagingProjectileAPI, HashMap<String, Float>>) parent.getCustomData().get(RAYCAST_KEY);
+      if(explosionMap.containsKey(projectile)){
+        return;
+      }
+
+      HashMap<String, Float> damageReductionMap = new HashMap<>();
+      explosionMap.put(projectile, damageReductionMap);
+      damageReductionMap.put("RemovalTime", Global.getCombatEngine().getTotalElapsedTime(false) + 1f);
+
+      // remove old cached explosions
+      for(Iterator<Map.Entry<DamagingProjectileAPI, HashMap<String, Float>>> pastProjectileIterator = explosionMap.entrySet().iterator(); pastProjectileIterator.hasNext();){
+        Map.Entry<DamagingProjectileAPI, HashMap<String, Float>> pastProjectile = pastProjectileIterator.next();
+        if (pastProjectile.getValue().get("RemovalTime") < Global.getCombatEngine().getTotalElapsedTime(false)) pastProjectileIterator.remove();
+      }
+
+      // init all occlusions
+      List<ShipAPI> potentialOcclusions = parent.getChildModulesCopy();
+      potentialOcclusions.add(parent);
+      HashMap<String, Integer> hitsMap = new HashMap<>();
+      for(ShipAPI occlusion: potentialOcclusions){
+        damageReductionMap.put(occlusion.getId(), 1f);
+        hitsMap.put(occlusion.getId(), 0);
+      }
+
+      // skip if not an explosion
+      Vector2f explosionLocation;
+      List<CombatEntityAPI> damagedAlready = new ArrayList<>();
+      float radius;
+      if (projectile instanceof MissileAPI || projectile instanceof DamagingExplosion) {
+        if(projectile instanceof MissileAPI ){
+          MissileAPI missile = (MissileAPI) projectile;
+          if(missile.getDamagedAlready() != null) damagedAlready = missile.getDamagedAlready();
+          explosionLocation = missile.getLocation();
+          radius = missile.getSpec().getExplosionRadius();
+        } else{
+          DamagingExplosion explosion = (DamagingExplosion) projectile;
+          if(explosion.getDamagedAlready() != null) damagedAlready = explosion.getDamagedAlready();
+          explosionLocation = explosion.getLocation();
+          radius = explosion.getCollisionRadius();
+        }
+      } else{
+        return;
+      }
+
+
+      // remove out of range occlusions
+      for (Iterator<ShipAPI> occlusionIter = potentialOcclusions.iterator(); occlusionIter.hasNext();){
+        ShipAPI occlusion = occlusionIter.next();
+        float explosionDistance = Misc.getTargetingRadius(explosionLocation, occlusion, false) + radius;
+        float moduleDistance = MathUtils.getDistanceSquared(explosionLocation, occlusion.getLocation());
+        if(moduleDistance > (explosionDistance * explosionDistance)){
+          occlusionIter.remove();
+        }
+      }
+
+      // skip if there is 0 or 1 ship in range
+      if(potentialOcclusions.isEmpty() || potentialOcclusions.size() == 1){
+        return;
+      }
+
+      // if more then 1 thing is in range, then raycast to check for explosion mults
+
+      int totalRayHits = 0;
+
+      List<Vector2f> rayEndpoints = MathUtils.getPointsAlongCircumference(explosionLocation, radius, NUM_RAYCASTS, 0f);
+      for(Vector2f endpoint : rayEndpoints){
+        float closestDistanceSquared = radius * radius;
+        String occlusionID = null;
+        for(ShipAPI occlusion : potentialOcclusions){ //  for each ray loop past all occlusions
+          Vector2f pointOnModuleBounds = CollisionUtils.getCollisionPoint(explosionLocation, endpoint, occlusion);
+
+          if(pointOnModuleBounds != null){ // if one is hit
+            float occlusionDistance = MathUtils.getDistanceSquared(explosionLocation, pointOnModuleBounds);
+            if(occlusionDistance < closestDistanceSquared){ // check the distance, if its shorter remember it
+              occlusionID = occlusion.getId();
+              closestDistanceSquared = occlusionDistance;
+            }
+          }
+        }
+        if(occlusionID != null){ // only not null if something is hit, in that case inc TotalRayHits
+          totalRayHits++;
+          hitsMap.put(occlusionID, hitsMap.get(occlusionID) + 1);
+        }
+      }
+      if(totalRayHits == 0) return;
+
+      float overkillDamage = 0f;
+      for(ShipAPI occlusion : potentialOcclusions){
+        if(occlusion == parent) continue; // special case the parent
+        // calculate and set the damage mult
+        float rayHits = (float) hitsMap.get(occlusion.getId());
+        float damageMult = Math.min(1f, Math.max(rayHits / totalRayHits, rayHits /((float) NUM_RAYCASTS /2)));
+        damageReductionMap.put(occlusion.getId(), damageMult);
+
+        // calculate the actual hp left over after the hit, if damage > hp, note down the overflow
+        float moduleArmor = getCurrentArmorRating(occlusion);
+        Pair<Float, Float> damageResult = damageAfterArmor(damage.getType(), damage.getDamage()*damageMult, damage.getDamage(), moduleArmor, occlusion);
+        float hullDamage = damageResult.two;
+
+        if(hullDamage > occlusion.getHitpoints() && !damagedAlready.contains(occlusion)){
+          overkillDamage += hullDamage - occlusion.getHitpoints();
+        }
+      }
+
+      // do the same mult calc for the parent, except also subtract overkill from the reduction
+      float damageMult = (float) hitsMap.get(parent.getId()) / totalRayHits;
+      damageReductionMap.put(parent.getId(), ((damage.getDamage() * damageMult) + overkillDamage)/damage.getDamage());
+    }
+
+    public static float getCurrentArmorRating(ShipAPI ship){
+      if (ship == null || !Global.getCombatEngine().isEntityInPlay(ship)) {
+        return 0f;
+      }
+      ArmorGridAPI armorGrid = ship.getArmorGrid();
+      float[][] armorGridGrid = armorGrid.getGrid();
+      List<Float> armorList = new ArrayList<>();
+      org.lwjgl.util.Point worstPoint = DefenseUtils.getMostDamagedArmorCell(ship);
+      if(worstPoint != null){
+        float totalArmor = 0;
+        for (int x = 0; x < armorGridGrid.length; x++) {
+          for (int y = 0; y < armorGridGrid[x].length; y++) {
+            armorList.add(armorGridGrid[x][y]);
+          }
+        }
+        Collections.sort(armorList);
+        for(int i = 0; i < 21; i++){
+          if(i < 9) totalArmor += armorList.get(i);
+          else  totalArmor += armorList.get(i)/2;
+        }
+        return totalArmor;
+      } else{
+        return armorGrid.getMaxArmorInCell() * 15f;
+      }
+    }
+
+    public static Pair<Float, Float> damageAfterArmor(DamageType damageType, float damage, float hitStrength, float armorValue, ShipAPI ship){
+      MutableShipStatsAPI stats = ship.getMutableStats();
+
+      float armorMultiplier = stats.getArmorDamageTakenMult().getModifiedValue();
+      float effectiveArmorMult = stats.getEffectiveArmorBonus().getMult();
+      float hullMultiplier = stats.getHullDamageTakenMult().getModifiedValue();
+      float minArmor = stats.getMinArmorFraction().getModifiedValue();
+      float maxDR = stats.getMaxArmorDamageReduction().getModifiedValue();
+
+      armorValue = Math.max(minArmor * ship.getArmorGrid().getArmorRating(), armorValue);
+      switch (damageType) {
+        case FRAGMENTATION:
+          armorMultiplier *= (0.25f * stats.getFragmentationDamageTakenMult().getModifiedValue());
+          hullMultiplier *= stats.getFragmentationDamageTakenMult().getModifiedValue();
+          break;
+        case KINETIC:
+          armorMultiplier *= (0.5f * stats.getKineticDamageTakenMult().getModifiedValue());
+          hullMultiplier *= stats.getKineticDamageTakenMult().getModifiedValue();
+          break;
+        case HIGH_EXPLOSIVE:
+          armorMultiplier *= (2f * stats.getHighExplosiveDamageTakenMult().getModifiedValue());
+          hullMultiplier *= stats.getHighExplosiveDamageTakenMult().getModifiedValue();
+          break;
+        case ENERGY:
+          armorMultiplier *= stats.getEnergyDamageTakenMult().getModifiedValue();
+          hullMultiplier *= stats.getEnergyDamageTakenMult().getModifiedValue();
+          break;
+      }
+
+      damage *= Math.max((1f - maxDR), ((hitStrength * armorMultiplier) / (armorValue * effectiveArmorMult + hitStrength * armorMultiplier)));
+
+      float armorDamage = damage * armorMultiplier;
+      float hullDamage = 0;
+      if (armorDamage > armorValue){
+        hullDamage = ((armorDamage - armorValue)/armorDamage) * damage * hullMultiplier;
+      }
+
+      return new Pair<>(armorDamage, hullDamage);
     }
   }
 
