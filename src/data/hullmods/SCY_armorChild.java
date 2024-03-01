@@ -13,13 +13,6 @@ public class SCY_armorChild extends BaseHullMod {
 
     if (!ship.isAlive()) return;
     ship.setDrone(true);
-
-    if (Global.getCombatEngine().getTotalElapsedTime(false) <= 2.05
-        && Global.getCombatEngine().getTotalElapsedTime(false) > 2) {
-      if (ship.getParentStation() != null && ship.getParentStation().isAlive()) {
-        SCY_modularArmor.applyHullmodModificationsToStats(ship.getMutableStats(), ship.getHullSpec(), ship.getParentStation().getVariant());
-      }
-    }
   }
 
   @Override
