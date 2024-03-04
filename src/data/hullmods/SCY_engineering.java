@@ -4,18 +4,18 @@ import static data.scripts.util.SCY_settingsData.engineering_noncompatible;
 import static data.scripts.util.SCY_txt.txt;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.characters.PersonalityAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.api.util.Pair;
+import data.scripts.util.StarficzAIUtils;
 import org.magiclib.util.MagicIncompatibleHullmods;
 
 import java.util.*;
 
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.AIUtils;
 
 
 public class SCY_engineering extends BaseHullMod {
@@ -31,9 +31,6 @@ public class SCY_engineering extends BaseHullMod {
   }
 
   private final float SENSOT_STILL = -25, SENSOR_MOVE = 25;
-  private boolean runOnce = false;
-  private float maxRange = 0;
-  private final IntervalUtil timer = new IntervalUtil(0.5f, 1.5f);
   private String ID;
   private float VENT_MULT = 3.5f;
   private float VENT_PERCENT_PER_CAP = 1f;
@@ -57,6 +54,110 @@ public class SCY_engineering extends BaseHullMod {
     }
     ship.getMutableStats().getFluxCapacity().modifyMult(id, CAP_MULT);
     ship.getMutableStats().getVentRateMult().modifyPercent(id, ship.getVariant().getNumFluxCapacitors()*VENT_PERCENT_PER_CAP);
+    if(!ship.hasListenerOfClass(SCYVentingAI.class)) ship.addListener(new SCYVentingAI(ship));
+  }
+
+  public static class SCYVentingAI implements AdvanceableListener{
+    public IntervalUtil damageTracker = new IntervalUtil(0.2F, 0.3F);
+    public CombatEngineAPI engine;
+    public ShipAPI ship;
+    public ShipAPI target;
+    public float targetRange;
+    public float lastUpdatedTime = 0f;
+    public List<StarficzAIUtils.FutureHit> incomingProjectiles = new ArrayList<>();
+    public List<StarficzAIUtils.FutureHit> predictedWeaponHits = new ArrayList<>();
+    public List<StarficzAIUtils.FutureHit> combinedHits = new ArrayList<>();
+    SCYVentingAI(ShipAPI ship){
+      this.ship = ship;
+    }
+
+    @Override
+    public void advance(float amount) {
+      engine = Global.getCombatEngine();
+      if (!ship.isAlive() || ship.getParentStation() != null || engine == null || !engine.isEntityInPlay(ship)) {
+        return;
+      }
+
+      // Calculate Decision Flags
+
+      damageTracker.advance(amount);
+      if (damageTracker.intervalElapsed()) {
+        lastUpdatedTime = Global.getCombatEngine().getTotalElapsedTime(false);
+        incomingProjectiles = StarficzAIUtils.incomingProjectileHits(ship, ship.getLocation());
+        float timeToPredict = Math.max(ship.getFluxTracker().getTimeToVent() + damageTracker.getMaxInterval(), 3f);
+        predictedWeaponHits = StarficzAIUtils.generatePredictedWeaponHits(ship, ship.getLocation(), timeToPredict);
+        combinedHits = new ArrayList<>();
+        combinedHits.addAll(incomingProjectiles);
+        combinedHits.addAll(predictedWeaponHits);
+      }
+
+      // update ranges and block firing if system is active
+      float minRange = Float.POSITIVE_INFINITY;
+
+      for (WeaponAPI weapon : ship.getAllWeapons()) {
+        if (!weapon.isDecorative() && !weapon.hasAIHint(WeaponAPI.AIHints.PD) && weapon.getType() != WeaponAPI.WeaponType.MISSILE) {
+          float currentRange = weapon.getRange();
+          minRange = Math.min(currentRange, minRange);
+          if (ship.getSystem().isChargeup()) {
+            weapon.setForceNoFireOneFrame(true);
+          }
+        }
+      }
+      targetRange = minRange;
+
+      // calculate how much damage the ship would take if unphased/vent/used system
+      float currentTime = Global.getCombatEngine().getTotalElapsedTime(false);
+      float timeElapsed = currentTime - lastUpdatedTime;
+      float bufferTime = 0.2f; // 0.2 sec of buffer time before getting hit
+      float armorBase = StarficzAIUtils.getCurrentArmorRating(ship);
+      float armorMax = ship.getArmorGrid().getArmorRating();
+      float armorMinLevel = ship.getMutableStats().getMinArmorFraction().getModifiedValue();
+      float armorVent = armorBase;
+
+      float hullDamageIfVent = 0f;
+      float empDamageIfVent = 0f;
+
+      float mountHP = 0f;
+      for (WeaponAPI weapon : ship.getAllWeapons()) {
+        mountHP += weapon.getCurrHealth();
+      }
+      float empDamageLevelVent = empDamageIfVent / mountHP;
+
+      for (StarficzAIUtils.FutureHit hit : combinedHits) {
+        float timeToHit = (hit.timeToHit - timeElapsed);
+        if (timeToHit < -0.1f) continue; // skip hits that have already happened
+        if (timeToHit < ship.getFluxTracker().getTimeToVent() + bufferTime) {
+          Pair<Float, Float> trueDamage = StarficzAIUtils.damageAfterArmor(hit.damageType, hit.damage, hit.hitStrength, armorVent, ship);
+          hullDamageIfVent += trueDamage.two;
+          empDamageIfVent += hit.empDamage;
+          armorVent = Math.max(armorVent - trueDamage.one, armorMinLevel * armorMax);
+        }
+      }
+
+      float armorDamageLevelVent = (armorBase - armorVent) / armorMax;
+      float hullDamageLevelVent = hullDamageIfVent / (ship.getHitpoints() * ship.getHullLevel());
+
+      ShipVariantAPI variant = Global.getSettings().getVariant(ship.getHullSpec().getBaseHullId() + "_combat");
+      float modules = variant == null ? 0 : variant.getStationModules().size();
+
+      float alive = 0;
+      for(ShipAPI module : ship.getChildModulesCopy()) {
+        if (module.getHitpoints() <= 0f) continue;
+        alive++;
+      }
+
+      float damageRiskMult = Misc.interpolate(1,3, modules > 0 ? alive/modules : 0);
+
+
+      if (!engine.isUIAutopilotOn() || engine.getPlayerShip() != ship) {
+        // vent control
+        if (ship.getFluxLevel() > 0.3f && armorDamageLevelVent < (0.03f*damageRiskMult) && hullDamageLevelVent < (0.03f*damageRiskMult) && empDamageLevelVent < (0.5f*damageRiskMult)) {
+          ship.giveCommand(ShipCommand.VENT_FLUX, null, 0);
+        } else {
+          ship.blockCommandForOneFrame(ShipCommand.VENT_FLUX);
+        }
+      }
+    }
   }
 
   @Override
@@ -81,162 +182,6 @@ public class SCY_engineering extends BaseHullMod {
       } else {
         //                member.getStats().getSensorProfile().modifyPercent(ID, +SENSOR_OFFSET);
         member.getStats().getSensorProfile().modifyPercent(ID, SENSOR_MOVE);
-      }
-    }
-  }
-
-  // MORE VENTING AI
-
-  @Override
-  public void advanceInCombat(ShipAPI ship, float amount) {
-
-    if (!runOnce) {
-      runOnce = true;
-      List<WeaponAPI> loadout = ship.getAllWeapons();
-      if (loadout != null) {
-        for (WeaponAPI w : loadout) {
-          if (w.getType() != WeaponAPI.WeaponType.MISSILE) {
-            if (w.getRange() > maxRange) {
-              maxRange = w.getRange();
-            }
-          }
-        }
-      }
-      timer.randomize();
-
-    }
-
-    if (Global.getCombatEngine().isPaused() || ship.getShipAI() == null) {
-      return;
-    }
-    timer.advance(amount);
-    if (timer.intervalElapsed()) {
-      if (ship.getFluxTracker().isOverloadedOrVenting()) {
-        return;
-      }
-      MissileAPI closest = AIUtils.getNearestEnemyMissile(ship);
-      if (closest != null && MathUtils.isWithinRange(ship, closest, 500)) {
-        return;
-      }
-
-      if (ship.getFluxTracker().getFluxLevel() < 0.5
-          && AIUtils.getNearbyEnemies(ship, maxRange) != null) {
-        return;
-      }
-
-      // venting need
-
-      float ventingNeed;
-      switch (ship.getHullSize()) {
-        case CAPITAL_SHIP:
-          ventingNeed = 2 * (float) Math.pow(ship.getFluxTracker().getFluxLevel(), 5f);
-          break;
-        case CRUISER:
-          ventingNeed = 1.5f * (float) Math.pow(ship.getFluxTracker().getFluxLevel(), 4f);
-          break;
-        case DESTROYER:
-          ventingNeed = (float) Math.pow(ship.getFluxTracker().getFluxLevel(), 3f);
-          break;
-        default:
-          ventingNeed = (float) Math.pow(ship.getFluxTracker().getFluxLevel(), 2f);
-          break;
-      }
-
-      float hullFactor;
-      switch (ship.getHullSize()) {
-        case CAPITAL_SHIP:
-          hullFactor = (float) Math.pow(ship.getHullLevel(), 0.4f);
-          break;
-        case CRUISER:
-          hullFactor = (float) Math.pow(ship.getHullLevel(), 0.6f);
-          break;
-        case DESTROYER:
-          hullFactor = ship.getHullLevel();
-          break;
-        default:
-          hullFactor = (float) Math.pow(ship.getHullLevel(), 2f);
-          break;
-      }
-
-      // situational danger
-
-      float dangerFactor = 0;
-
-      List<ShipAPI> nearbyEnemies = AIUtils.getNearbyEnemies(ship, 2000f);
-      for (ShipAPI enemy : nearbyEnemies) {
-        // reset often with timid or cautious personalities
-        FleetSide side = FleetSide.PLAYER;
-        if (ship.getOriginalOwner() > 0) {
-          side = FleetSide.ENEMY;
-        }
-        if (Global.getCombatEngine().getFleetManager(side).getDeployedFleetMember(ship) != null) {
-          PersonalityAPI personality =
-              (Global.getCombatEngine().getFleetManager(side).getDeployedFleetMember(ship))
-                  .getMember()
-                  .getCaptain()
-                  .getPersonalityAPI();
-          if (personality.getId().equals("timid") || personality.getId().equals("cautious")) {
-            if (enemy.getFluxTracker().isOverloaded()
-                && enemy.getFluxTracker().getOverloadTimeRemaining()
-                    > ship.getFluxTracker().getTimeToVent()) {
-              continue;
-            }
-            if (enemy.getFluxTracker().isVenting()
-                && enemy.getFluxTracker().getTimeToVent() > ship.getFluxTracker().getTimeToVent()) {
-              continue;
-            }
-          }
-        }
-
-        switch (enemy.getHullSize()) {
-          case CAPITAL_SHIP:
-            dangerFactor +=
-                Math.max(
-                    0,
-                    3f
-                        - (MathUtils.getDistanceSquared(enemy.getLocation(), ship.getLocation())
-                            / 1000000));
-            break;
-          case CRUISER:
-            dangerFactor +=
-                Math.max(
-                    0,
-                    2.25f
-                        - (MathUtils.getDistanceSquared(enemy.getLocation(), ship.getLocation())
-                            / 1000000));
-            break;
-          case DESTROYER:
-            dangerFactor +=
-                Math.max(
-                    0,
-                    1.5f
-                        - (MathUtils.getDistanceSquared(enemy.getLocation(), ship.getLocation())
-                            / 1000000));
-            break;
-          case FRIGATE:
-            dangerFactor +=
-                Math.max(
-                    0,
-                    1f
-                        - (MathUtils.getDistanceSquared(enemy.getLocation(), ship.getLocation())
-                            / 1000000));
-            break;
-          default:
-            dangerFactor +=
-                Math.max(
-                    0,
-                    0.5f
-                        - (MathUtils.getDistanceSquared(enemy.getLocation(), ship.getLocation())
-                            / 640000));
-            break;
-        }
-      }
-
-      float decisionLevel = (ventingNeed * hullFactor + 1) / (dangerFactor + 1);
-
-      if (decisionLevel >= 1.5f
-          || (ship.getFluxTracker().getFluxLevel() > 0.1f && dangerFactor == 0)) {
-        ship.giveCommand(ShipCommand.VENT_FLUX, null, 0);
       }
     }
   }

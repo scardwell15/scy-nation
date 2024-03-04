@@ -146,7 +146,7 @@ public class SCY_lionAnimation implements EveryFrameWeaponEffectPlugin {
     // SHIP.getFluxTracker().isOverloadedOrVenting() || SHIP.getTravelDrive().isActive()){
     if (SHIP.isHoldFire()
         || SHIP.isHoldFireOneFrame()
-        || SHIP.getFluxTracker().isOverloadedOrVenting()
+        || (SHIP.getFluxTracker().isOverloadedOrVenting() && (SHIP.getFluxTracker().getTimeToVent() > 1f || SHIP.getFluxTracker().getOverloadTimeRemaining() > 1f))
         || SHIP.getTravelDrive().isActive()) {
       if (activation) {
         activation = false;
