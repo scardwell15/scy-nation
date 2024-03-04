@@ -9,7 +9,7 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 public class SCY_safetiesStats extends BaseShipSystemScript {
 
   public final float ROF_BONUS = 1f, BEAM_DAMAGE = 1f, RANGE_DROP = 500f;
-  public final float FLUX_REDUCTION = 25f, FAILURE_RATE = 0.04f;
+  public final float FLUX_REDUCTION = 25f;
 
   @Override
   public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -29,17 +29,6 @@ public class SCY_safetiesStats extends BaseShipSystemScript {
 
     stats.getEnergyWeaponFluxCostMod().modifyPercent(id, -FLUX_REDUCTION);
     stats.getBallisticWeaponFluxCostMod().modifyPercent(id, -FLUX_REDUCTION);
-
-    float EXTRA_OVERRIDE = 0;
-    if (((ShipAPI) (stats.getEntity())).getVariant().getHullMods().contains("safetyoverrides")) {
-      EXTRA_OVERRIDE = 0.08f;
-    } else {
-      EXTRA_OVERRIDE = 0f;
-    }
-
-    stats
-        .getWeaponMalfunctionChance()
-        .modifyFlat(id, (FAILURE_RATE + EXTRA_OVERRIDE) * effectLevel);
   }
 
   @Override
@@ -49,7 +38,6 @@ public class SCY_safetiesStats extends BaseShipSystemScript {
     stats.getBeamWeaponDamageMult().unmodify(id);
     stats.getEnergyWeaponFluxCostMod().unmodify(id);
     stats.getBallisticWeaponFluxCostMod().unmodify(id);
-    stats.getWeaponMalfunctionChance().unmodify(id);
     stats.getWeaponRangeMultPastThreshold().unmodify(id);
     stats.getWeaponRangeThreshold().unmodify(id);
   }

@@ -20,7 +20,6 @@ public class SCY_safetiesAI implements ShipSystemAIScript {
   private boolean runOnce = false;
   private List<WeaponAPI> weapons = new ArrayList<>();
   private final IntervalUtil timer = new IntervalUtil(0.5f, 1);
-  private boolean SO_build = false;
 
   @Override
   public void init(
@@ -35,17 +34,13 @@ public class SCY_safetiesAI implements ShipSystemAIScript {
   public void advance(
       float amount, Vector2f missileDangerDir, Vector2f collisionDangerDir, ShipAPI target) {
 
-    if (engine.isPaused() || ship.getShipAI() == null || SO_build) {
+    if (engine.isPaused() || ship.getShipAI() == null) {
       return;
     }
 
     if (!runOnce) {
       runOnce = true;
       weapons = ship.getAllWeapons();
-      if (ship.getVariant().getHullMods().contains("safetyoverrides")) {
-        SO_build = true;
-        return;
-      }
     }
 
     // prevent the system activation if retreating

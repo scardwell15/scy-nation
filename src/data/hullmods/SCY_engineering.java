@@ -6,18 +6,10 @@ import static data.scripts.util.SCY_txt.txt;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.PersonalityAPI;
 import com.fs.starfarer.api.combat.*;
-// import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.util.Pair;
-import com.fs.starfarer.combat.entities.DamagingExplosion;
-import org.lazywizard.lazylib.CollisionUtils;
-import org.lazywizard.lazylib.combat.DefenseUtils;
-import org.lwjgl.util.vector.Vector2f;
 import org.magiclib.util.MagicIncompatibleHullmods;
 
 import java.util.*;
@@ -25,7 +17,6 @@ import java.util.*;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 
-// import com.fs.starfarer.api.util.Misc;
 
 public class SCY_engineering extends BaseHullMod {
 
@@ -44,11 +35,14 @@ public class SCY_engineering extends BaseHullMod {
   private float maxRange = 0;
   private final IntervalUtil timer = new IntervalUtil(0.5f, 1.5f);
   private String ID;
+  private float VENT_MULT = 3.5f;
+  private float VENT_PERCENT_PER_CAP = 1f;
+  private float CAP_MULT = 2f;
+
 
   @Override
-  public void applyEffectsBeforeShipCreation(
-      HullSize hullSize, MutableShipStatsAPI stats, String id) {
-    stats.getVentRateMult().modifyFlat(id, (Float) VENTING_BONUS.get(hullSize));
+  public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
+    stats.getVentRateMult().modifyMult(id, VENT_MULT);
     stats.getEngineDamageTakenMult().modifyMult(id, 0.75f);
     stats.getCombatEngineRepairTimeMult().modifyMult(id, 0.75f);
     ID = id;
@@ -58,35 +52,20 @@ public class SCY_engineering extends BaseHullMod {
   public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
     for (String tmp : engineering_noncompatible) {
       if (ship.getVariant().getHullMods().contains(tmp)) {
-        MagicIncompatibleHullmods.removeHullmodWithWarning(
-            ship.getVariant(), tmp, "SCY_engineering");
+        MagicIncompatibleHullmods.removeHullmodWithWarning(ship.getVariant(), tmp, "SCY_engineering");
       }
     }
+    ship.getMutableStats().getFluxCapacity().modifyMult(id, CAP_MULT);
+    ship.getMutableStats().getVentRateMult().modifyPercent(id, ship.getVariant().getNumFluxCapacitors()*VENT_PERCENT_PER_CAP);
   }
 
   @Override
   public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
-    if (index == 0) return "+1";
-    if (index == 1) return "+50" + txt("%");
-    if (index == 2) return "+200" + txt("%");
-    if (index == 3) return "+100" + txt("%");
-    if (index == 4) return (int) SENSOT_STILL + txt("%");
+    if (index == 0) return "25" + txt("%");
+    if (index == 1) return CAP_MULT + "x";
+    if (index == 2) return VENT_MULT + "x";
+    if (index == 3) return "+" + VENT_PERCENT_PER_CAP + txt("%");
 
-    if (index == 5) return "-80" + txt("%");
-    if (index == 6) return "-50" + txt("%");
-    if (index == 7) return "+" + (int) SENSOR_MOVE + txt("%");
-
-    if (index == 8) return "+25" + txt("%");
-    //        if (index == 9) return txt("hm_engineer");
-    // incompatibility list
-    String list = "\n";
-    for (String id : engineering_noncompatible) {
-      if (Global.getSettings().getHullModSpec(id) == null) continue;
-      list += " - ";
-      list = list + Global.getSettings().getHullModSpec(id).getDisplayName();
-      list += "\n";
-    }
-    if (index == 9) return list;
     return null;
   }
 
@@ -103,7 +82,6 @@ public class SCY_engineering extends BaseHullMod {
         //                member.getStats().getSensorProfile().modifyPercent(ID, +SENSOR_OFFSET);
         member.getStats().getSensorProfile().modifyPercent(ID, SENSOR_MOVE);
       }
-
     }
   }
 
