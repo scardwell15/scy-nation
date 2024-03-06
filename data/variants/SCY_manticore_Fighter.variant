@@ -1,0 +1,37 @@
+{
+    "displayName": "Fighter",
+    "fluxCapacitors": 0,
+    "fluxVents": 2,
+    "goalVariant": true,
+    "hullId": "SCY_manticore",
+    "hullMods": [
+        "eccm",
+        "expanded_deck_crew",
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "suppressedMods": [],
+    "variantId": "SCY_manticore_Fighter",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "SCY_intercept",
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "SCY_singularity",
+            }
+        },
+    ],
+    "wings": [
+        "SCY_stygere_wing",
+        "SCY_stygere_wing",
+        "SCY_nosos_wing",
+    ],
+    "modules": [],
+}
