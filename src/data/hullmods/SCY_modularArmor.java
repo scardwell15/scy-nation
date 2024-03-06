@@ -62,8 +62,11 @@ public class SCY_modularArmor extends BaseHullMod {
         generateExplosionRayhitMap(projectile, damage, parent);
         explosionMap = (HashMap<DamagingProjectileAPI, HashMap<String, Float>>) parent.getCustomData().get(RAYCAST_KEY);
 
-        damage.getModifier().modifyMult(this.getClass().getName(), explosionMap.get(projectile).get(ship.getId()));
+        if(!explosionMap.containsKey(projectile) || !explosionMap.get(projectile).containsKey(ship.getId())){
+          return null;
+        }
 
+        damage.getModifier().modifyMult(this.getClass().getName(), explosionMap.get(projectile).get(ship.getId()));
         return this.getClass().getName();
       }
       return null;

@@ -66,6 +66,7 @@ public class SCY_targetingAI implements ShipSystemAIScript {
         }
       }
 
+      ship.getAIFlags().setFlag(ShipwideAIFlags.AIFlags.BACK_OFF_MIN_RANGE, 1.0F, maxRange);
 
       if (targetDistance > maxRange) {
         if (SCY_targetingStats.getMode(ship) != targetingMode.HEAVY && AIUtils.canUseSystemThisFrame(ship)) {

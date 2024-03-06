@@ -16,8 +16,6 @@ import org.magiclib.util.MagicIncompatibleHullmods;
 
 import java.util.*;
 
-
-
 public class SCY_engineering extends BaseHullMod {
 
   private final Map<HullSize, Float> VENTING_BONUS = new HashMap();
@@ -146,7 +144,7 @@ public class SCY_engineering extends BaseHullMod {
         alive++;
       }
 
-      float damageRiskMult = Misc.interpolate(1,3, modules > 0 ? alive/modules : 0);
+      float damageRiskMult = Misc.interpolate(1,5, modules > 0 ? alive/modules : 0);
 
 
       if (!engine.isUIAutopilotOn() || engine.getPlayerShip() != ship) {
