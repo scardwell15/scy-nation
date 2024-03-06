@@ -39,4 +39,5 @@
         #"everyFrameEffect":"data.scripts.weapons.SCY_hemorMuzzle",
         "everyFrameEffect":"data.scripts.weapons.SCY_addToMuzzlePlugin",			
 	"fireSoundTwo":"SCY_hemor2",
+	"passThroughMissiles":true,
 }

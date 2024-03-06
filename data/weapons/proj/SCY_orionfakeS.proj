@@ -14,5 +14,8 @@
 	"glowRadius":0,
 	"hitGlowRadius":0,	
 	"textureScrollSpeed":64.0,
-	"pixelsPerTexel":5.0,		    
+	"pixelsPerTexel":5.0,
+	"passThroughMissiles":true,
+	"passThroughFighters":true,
+    "passThroughFightersOnlyWhenDestroyed":true,    
 }

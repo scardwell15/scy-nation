@@ -40,4 +40,7 @@
         #"everyFrameEffect":"data.scripts.weapons.SCY_hemorMuzzle",	
         "everyFrameEffect":"data.scripts.weapons.SCY_addToMuzzlePlugin",		
 	"fireSoundTwo":"SCY_hemor3",
+	"passThroughMissiles":true,
+	"passThroughFighters":true,
+    "passThroughFightersOnlyWhenDestroyed":true,
 }
