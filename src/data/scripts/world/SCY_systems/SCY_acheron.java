@@ -44,6 +44,7 @@ public class SCY_acheron implements SectorGeneratorPlugin {
     StarSystemAPI system = sector.createStarSystem(txt("stm_system"));
     //        ProcgenUsedNames.notifyUsed("Acheron");
     system.setBackgroundTextureFilename("graphics/SCY/backgrounds/SCY_acheron.jpg");
+    system.setOptionalUniqueId("SCY_acheron");
     ProcgenUsedNames.isUsed("Acheron");
 
     // create the star and generate the hyperspace anchor for this system
@@ -597,6 +598,11 @@ public class SCY_acheron implements SectorGeneratorPlugin {
     system.addEntity(jumpPoint2);
 
     system.autogenerateHyperspaceJumpPoints(true, true, true);
+    system.setEnteredByPlayer(true);
+    Misc.setAllPlanetsSurveyed(system, true);
+    for (MarketAPI sysMarket : Global.getSector().getEconomy().getMarkets(system)) {
+      sysMarket.setSurveyLevel(MarketAPI.SurveyLevel.FULL); // could also be a station, not a planet
+    }
   }
 
   /////////////////////////////////
