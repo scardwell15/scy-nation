@@ -40,10 +40,10 @@ class SCY_ArmorPaperdollsPlugin : BaseEveryFrameCombatPlugin() {
         }
         */
 
-        // draw paperdoll for armor
-        val center = Vector2f(120f, 120f) //TODO: make sure this doesn't change across ui scales
+        // draw paperdoll for armor (note: if in uirendermethod, don't scale)
+        val center = Vector2f(120f, 120f).scale(Global.getSettings().screenScaleMult) as Vector2f
         MagicUI.openGLForMiscWithinViewport()
-        drawPaperdoll(ship, center, 1f)
+        drawPaperdoll(ship, center, Global.getSettings().screenScaleMult)
         MagicUI.closeGLForMiscWithinViewport()
     }
 
