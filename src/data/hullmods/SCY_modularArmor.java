@@ -286,10 +286,10 @@ public class SCY_modularArmor extends BaseHullMod {
             new Object[]{"Armor Location", width - 80f * 2 - 8f, "Hull", 80f, "Armor", 80f});
 
     // getting the stats of child modules in refit shouldn't have to be this hard
-    Pattern kolPattern = Pattern.compile("SCY_.+?[AFR][FLR][LR]?", Pattern.CASE_INSENSITIVE);
+    Pattern scyPattern = Pattern.compile("SCY_.+?[AFR][FLR][LR]?", Pattern.CASE_INSENSITIVE);
 
     for (String module : variant.getStationModules().values()) {
-      Matcher matcher = kolPattern.matcher(module);
+      Matcher matcher = scyPattern.matcher(module);
 
       if(matcher.find()){
         ShipHullSpecAPI hull = Global.getSettings().getHullSpec(matcher.group());
@@ -386,7 +386,7 @@ public class SCY_modularArmor extends BaseHullMod {
 
     CombatEngineAPI engine = Global.getCombatEngine();
     if(engine.getPlayerShip() == ship && speedRatio > 0.01f){
-      String modularIcon = Global.getSettings().getSpriteName("icons", "kol_modules");
+      String modularIcon = Global.getSettings().getSpriteName("icons", "scy_modules");
       engine.maintainStatusForPlayerShip(SPEED_STATUS_KEY, modularIcon, "Damaged Modular Armor", "+" + Math.round((speedRatio * SPEED_BONUS * 100)) + " top speed" , false);
     }
   }
